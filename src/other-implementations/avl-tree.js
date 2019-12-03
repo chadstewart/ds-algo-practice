@@ -56,7 +56,7 @@ class AVLTree {
        }
     } else if (node.data > root.data) {
        // Go Right! root.
-       right = insertHelper(self, root.right, node);
+       root.right = insertHelper(self, root.right, node);
        // Check for balance factor and perform appropriate rotation
        if (root.right !== null && self.getBalanceFactor(root) < -1) {
           if (node.data > root.right.data) {
