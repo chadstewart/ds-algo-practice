@@ -1,23 +1,23 @@
 class LinkedListNode {
     constructor(value) {
         this.value = value;
-        this.next = NULL;
+        this.next = null;
     }
 }
 
 class LinkedList {
     constructor() {
-        this.root = NULL;
+        this.root = null;
     }
 
     insert(value) {
-        if(this.root === NULL) {
+        if(this.root === null) {
             this.root = new LinkedListNode(value);
         } else {
             let currentNode = this.root;
 
             while(currentNode) {
-                if(currentNode.next === NULL) {
+                if(currentNode.next === null) {
                     currentNode.next = new LinkedListNode(value);
 
                     return `${value} was inserted into the list successfully!`;

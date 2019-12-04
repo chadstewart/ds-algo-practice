@@ -21,7 +21,7 @@ class MinHeap {
 
     getParentIndex(index) {
         if(index === 0) {
-            return NULL;
+            return null;
         }
 
         return Math.floor((index - 1) / 2);
@@ -40,7 +40,7 @@ class MinHeap {
     heapifyUp(index) {
         let parent = this.getParentIndex(index);
 
-        while(parent !== NULL && (this.heap[index] > this.heap[parent])) {            
+        while(parent !== null && (this.heap[index] > this.heap[parent])) {            
             this.swap(index, parent);
             index = parent;
             parent = this.getParentIndex(index);            
@@ -52,9 +52,9 @@ class MinHeap {
         let chosenChild;
 
         while(this.heap[index] < (children[0] || children[1])) {
-            if(children[1] === NULL || children[0] < children[1]) {
+            if(children[1] === null || children[0] < children[1]) {
                 chosenChild = 0;
-            } else if (children[0] === NULL || children[1] < children[0]) {
+            } else if (children[0] === null || children[1] < children[0]) {
                 chosenChild = 1;
             }
             

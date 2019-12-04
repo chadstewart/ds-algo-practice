@@ -1,19 +1,19 @@
 class TreeNode {
     constructor(value) {
         this.value = value;
-        this.right = NULL;
-        this.left = NULL;
+        this.right = null;
+        this.left = null;
     }
 }
 
 class AVLTree {
     constructor() {
-        this.root = NULL;
+        this.root = null;
     }
 
     getHeight(root = this.root) {
         let height = 0;
-        if(root === NULL) {
+        if(root === null) {
             height = -1;
         } else {
             height = Math.max(this.getHeight(root.left), this.getHeight(root.right)) + 1;
@@ -27,9 +27,9 @@ class AVLTree {
     }
 
     insert(value, root = this.root) {
-        if(value === NULL) {
+        if(value === null) {
             return 'Please enter a value';
-        } else if(root === NULL) {
+        } else if(root === null) {
             this.root = new TreeNode(value);
         } else if (root.value === value) {
             return `${value} already exists in this tree!`;
@@ -84,7 +84,7 @@ class AVLTree {
 
     search(value) {
         let currentNode = {
-            parent: NULL,
+            parent: null,
             root: this.root()
         };
 

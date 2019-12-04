@@ -1,9 +1,9 @@
 class BSTNode {
-    constructor(value = NULL, parent = NULL) {
+    constructor(value = null, parent = null) {
         this.value = value;
         this.parent = parent;
-        this.left = NULL;
-        this.right = NULL;
+        this.left = null;
+        this.right = null;
     }
 }
 
@@ -20,7 +20,7 @@ class BST {
 
             while (currentNode) {
                 if(value < currentNode.value){
-                    if (currentNode.left === NULL) {
+                    if (currentNode.left === null) {
                         currentNode.left = new BSTNode(value, currentNode);
                     } else {
                         currentNode = currentNode.left;
@@ -28,7 +28,7 @@ class BST {
                 }
 
                 if(value > currentNode.value){
-                    if (currentNode.right === NULL) {
+                    if (currentNode.right === null) {
                         currentNode.right = new BSTNode(value, currentNode);
                     } else {
                         currentNode = currentNode.right;
@@ -77,11 +77,11 @@ class BST {
         if(typeof removeNode === "string") {
             return removeNode;
         } else {
-            if(removeNode.left === NULL && removeNode.right === NULL){
-                removeNode = NULL;
-            } else if (removeNode.right && removeNode.left === NULL) {
+            if(removeNode.left === null && removeNode.right === null){
+                removeNode = null;
+            } else if (removeNode.right && removeNode.left === null) {
                 removeNode = removeNode.right;
-            } else if (removeNode.left && removeNode.right === NULL) {
+            } else if (removeNode.left && removeNode.right === null) {
                 removeNode = removeNode.left;
             } else if (removeNode.left && removeNode.right) {
                 removeNode = this.minValue(removeNode.right)

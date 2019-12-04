@@ -4,7 +4,7 @@ function fibonacciDynamic(sequenceLength) {
     const fibExec = num => {
         if(num < 0) {
             return 'Please use a non-negative integar.';
-        } else if(num != NULL) {
+        } else if(num != null) {
             return fibonacci[num];
         } else {
             return (fibonacci.push(fibExec(num - 1) + fibExec(num - 2)));
@@ -19,7 +19,7 @@ function fibonacciIterative(sequenceLength) {
     const fibonacci = [0, 1];
 
     for(let i = 0; i <= sequenceLength; i++){
-        if(sequenceLength === (1 || 0)){
+        if(sequenceLength === 1 || sequenceLength ===  0){
             return fibonacci[sequenceLength];
         }
 

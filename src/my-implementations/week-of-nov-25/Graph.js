@@ -1,5 +1,5 @@
 class LinkedListNode {
-    constructor(value = NULL) {
+    constructor(value = null) {
         this.value = value;
         this.next = next;
     }
@@ -7,17 +7,17 @@ class LinkedListNode {
 
 class LinkedList {
     constructor() {
-        this.head = NULL;
+        this.head = null;
     }
 
     insert(value) {
-        if (this.head = NULL) {
+        if (this.head === null) {
             this.head = new LinkedListNode(value);
         } else {
             let currentNode = this.head;
             
             while(currentNode){
-                if(currentNode.next === NULL) {
+                if(currentNode.next === null) {
                     currentNode.next = new LinkedListNode(value);
                     return `${value} was successfully added to list!`;
                 }
@@ -43,7 +43,7 @@ class LinkedList {
     }
 
     returnList () {
-        list = [];
+        let list = [];
         let currentNode = this.head;
 
         while(currentNode){

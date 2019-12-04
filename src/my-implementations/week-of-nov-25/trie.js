@@ -1,5 +1,5 @@
 class TrieNode {
-    constructor(value = NULL) {
+    constructor(value = null) {
         this.character = value;
         this.children = {};
         this.isCompleted = isCompleted;
