@@ -39,13 +39,11 @@ class Trie {
 
             if(currentNode.children[letter]) {
                 currentNode = currentNode.children[letter];
-            } else if (i === word.length - 1 && !currentNode.isCompleteWord) {
-                return false;                
             } else {
-                return false;
+                return false;                
             }
         }
 
-        return true;
+        return currentNode.isCompleteWord === true;
     }
 }
