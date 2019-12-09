@@ -74,6 +74,10 @@ class Graph {
         }
     }
 
+    getNeighbors(vertex) {
+        return this.adjacencyList.get(vertex).returnList();
+    }
+
     getAllVertices() {
         let result = [];
         let getKeys = this.adjacencyList.keys();
