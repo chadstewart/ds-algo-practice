@@ -37,7 +37,7 @@ class AVLTree {
             root.left = this.insert(value, root.left);
 
             if(root.left !== null && this.getBalanceFactor(root) > 1) {
-                if (value > root.left.data) {
+                if (value > root.left.value) {
                    root = rotationLL(root);
                 } else {
                    root = rotationLR(root);
@@ -47,7 +47,7 @@ class AVLTree {
             root.right = this.insert(value, root.right);
 
             if(root.right !== null && this.getBalanceFactor(root) > -1) {
-                if (value > root.right.data) {
+                if (value > root.right.value) {
                    root = rotationRR(root);
                 } else {
                    root = rotationRL(root);

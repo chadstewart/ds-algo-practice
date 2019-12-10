@@ -1,0 +1,67 @@
+1038. Binary Search Tree to Greater Sum Tree
+
+//Average attempt
+
+var bstToGst = function(root) {
+    let sumArray = null;
+    let prevVal = 0;
+    
+    
+    let dfs = node => {
+        if(node !== null) {
+            dfs(node.left);
+            node && sumArray += node.val;
+            dfs(node.right);
+        }
+    };
+    
+    dfs(root);
+    
+    let dfsAddition = node => {
+        if(node !== null) {
+            dfsAddition(node.left);
+            node && {
+                sumArray -= prevVal;
+                prevVal = node.val;
+            };
+            dfsAddition(node.right);
+        }
+    };
+
+    dfsAddition(root);
+
+    return root;
+    
+};
+
+//Callback attempt
+
+var bstToGst = function(root) {
+    let sum = null;
+    let prevVal = 0;
+    
+    
+    let dfs = (node, callback) => {
+        if(node !== null) {
+            dfs(node.left, callback);
+            node && callback(node);
+            dfs(node.right, callback);
+        }
+    };
+
+    let addToSum = node => {
+        sum += node.val;
+    }
+
+    let toGst = node => {
+        sum -= prevVal;
+        prevVal = node.val;
+        node.val = sum;
+    }
+    
+    dfs(root, addToSum);
+    dfs(root, toGst);
+
+    return root;
+    
+};

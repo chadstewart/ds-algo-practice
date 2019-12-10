@@ -21,21 +21,21 @@ function depthFirstSearchBSTRecursive(bst, order = 'in') {
     let currentNode = bst.root;
 
     let preOrder = node => {
-        node && result.push(node);
+        node && result.push(node.vaue);
         preOrder(node.left);
         preOrder(node.right)
     }
 
     let inOrder = node => {
         inOrder(node.left);
-        node && result.push(node);
+        node && result.push(node.value);
         inOrder(node.right);
     }
 
     let postOrder = node => {
         postOrder(node.left);
         postOrder(node.right);
-        node && result.push(node);
+        node && result.push(node.value);
     }
 
     switch(order) {
