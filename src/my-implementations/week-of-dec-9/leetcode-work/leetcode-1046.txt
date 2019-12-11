@@ -1,0 +1,12 @@
+1046. Last Stone Weight
+
+//Semi-LOL Solution
+
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+var lastStoneWeight = function(stones) {
+    let workWithStones = stones.sort();
+    
+};

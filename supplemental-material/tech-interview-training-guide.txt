@@ -1,0 +1,58 @@
+Main skills to work on: 
+ 
+    1.	Level of problem-solving ability and its consistency (Strategy) 
+    
+        a.	Ensure you understand the problem 
+        
+            i.	 Repeat the problem in your own words 
+            ii.	 Check assumptions and ask clarifying questions *E.g. clarify intended input, clarify intended output, clarify edge cases, performance constraints 
+            iii. Use real examples *Use real input to illustrate what the working solution would look like, ignore implementation 
+            iv.	 Validate your understanding *Write informal tests which covers output validation and constraints 
+        
+        b.	Brainstorm solutions and select one *Always start with the brute force solution 
+        
+            i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
+            ii.	 Brainstorm multiple optimizations of previous solutions based on space/time complexity optimization 
+            iii. Determine practicality of implementation, what trade-offs can be made for the problem 
+
+        c.  Implement solution
+
+            i.	 Choose a best-fit solution after previous analysis. *Get interviewer approval before writing any executable code
+            ii.  Implement chosen solution, writing clean and easy to read code that will fulfill pre-written test cases.
+            iii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question.
+    
+    2.	Coding ability *a.k.a. produce a good code sample (Tactics) 
+    
+        a.	Ensure your code is readable and easy to understand 
+        
+            i.	 Self-descriptive variables 
+            ii.	 Self-descriptive methods 
+            iii. If a code-block warrants explanation, put it in a method and properly name the method 
+        
+        b.	Ensure your code is actually solving the problem presented 
+        
+            i.	Step through the code line by line and ensure it passes pre-written test cases 
+        
+        
+        c.	Modular *Code-block can be reused through reference and is unit-testable D.R.Y Do not repeat yourself 
+        
+        d.	Deep understanding of programming language. *JavaScript in this case 
+        
+            i.	Use language specific methods whenever practical 
+            ii.	Understand language constraints *How the language accomplishes tasks which can cause errors 
+        
+        e.	Deep understanding of Data Structures and Algorithms implementation 
+        
+            i.	 Space/Time complexity 
+            ii.	 Use cases *Appropriate uses, inappropriate uses
+            iii. Constraints *Input and Output 
+        
+        f.	Y.A.G.N.I *You ain't gonna need it Don't build something until you need it 
+    
+    3.	Communication ability 
+    
+        a.	Always communicate your intention as you’re going through the processes 
+        b.	Ensure what you communicate is understood by those who need to know *Speak clearly and concisely, ensure the interviewer at least has some idea of what you are doing 
+        c.	Collaboration *Ensure the interviewer understands what's going on, seek help when you are stuck and do so early 
+        d.	Ask what can be ignored for the sake of brevity and time *Understanding language tools really helps with this 
+        e.	Keep the interviewer engaged, make the interview a conversation and not a firing squad 

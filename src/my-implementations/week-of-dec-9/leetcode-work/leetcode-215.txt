@@ -1,0 +1,52 @@
+215. Kth Largest Element in an Array
+
+//LOL Solution
+
+var findKthLargest = function(nums, k) {
+    let result = nums.reverse();
+    return result[k - 1];
+};
+
+//Actually doing work attempt at a solution
+
+var findKthLargest = function(nums, k) {
+    let result = [];
+
+    let parent = node => {
+        return Math.floor(node / 2);
+    }
+
+    let heapifyUp = () => {
+        let currentNode = result.length - 1;
+        let parent = parent(currentNode);
+
+        while(result[currentNode] < result[parent]) {
+            let temp = result[parent];
+            result[parent] = result[currentNode];
+            result[currentNode] = temp;
+            currentNode = parent;
+            parent = parent(currentNode);
+        }
+    };
+    
+    let insert = value => {
+        result.push(value);
+        heapifyUp();
+    };
+
+    for(let i = 0; i < k - 1; i++) {
+        insert(nums[i]);
+    }
+
+    for(let i = k; i < nums.length; i++) {
+        if(nums[i] > result[0]) {
+            result[0] = nums[i];
+            heapifyUp();
+        }
+    }
+
+    return result[0];
+};
+
+//Quick-Sort Augmentation Solution
+

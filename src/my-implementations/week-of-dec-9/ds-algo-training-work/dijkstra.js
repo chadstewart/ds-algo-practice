@@ -81,14 +81,13 @@ class PriorityQueue {
 }
 
 const dijkstra = (graph, src) => {
-    const infinity = Infinity;
     const distances = {};
     const previousVertices = {};
     const visitedVertices = {};
     const queue = new PriorityQueue();
 
     graph.getAllVertices().foreach(vertex => {
-        distances[vertex] = infinity;
+        distances[vertex] = Infinity;
         previousVertices[vertex] = null;
     });
 
@@ -97,7 +96,7 @@ const dijkstra = (graph, src) => {
 
     while(!queue.isEmpty()) {
         let currentVertex = queue.dequeue();
-        let neighbors = getNeighbors(currentNode.key);
+        let neighbors = graph.getNeighbors(currentNode.key);
 
         neighbors.foreach(neighbor => {
             if(!visitedVertices[currentNode.key]) {
