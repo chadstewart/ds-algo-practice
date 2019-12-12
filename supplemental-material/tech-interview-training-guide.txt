@@ -5,7 +5,7 @@ Main skills to work on:
         a.	Ensure you understand the problem 
         
             i.	 Repeat the problem in your own words 
-            ii.	 Check assumptions and ask clarifying questions *E.g. clarify intended input, clarify intended output, clarify edge cases, performance constraints 
+            ii.	 Check assumptions and ask clarifying questions *e.g. clarify intended input, clarify intended output, clarify edge cases, performance constraints 
             iii. Use real examples *Use real input to illustrate what the working solution would look like, ignore implementation 
             iv.	 Validate your understanding *Write informal tests which covers output validation and constraints 
         
@@ -34,7 +34,7 @@ Main skills to work on:
             i.	Step through the code line by line and ensure it passes pre-written test cases 
         
         
-        c.	Modular *Code-block can be reused through reference and is unit-testable D.R.Y Do not repeat yourself 
+        c.	Modular *Code-block can be reused through reference and is unit-testable D.R.Y (Do not repeat yourself) 
         
         d.	Deep understanding of programming language. *JavaScript in this case 
         
@@ -47,7 +47,7 @@ Main skills to work on:
             ii.	 Use cases *Appropriate uses, inappropriate uses
             iii. Constraints *Input and Output 
         
-        f.	Y.A.G.N.I *You ain't gonna need it Don't build something until you need it 
+        f.	Y.A.G.N.I (You ain't gonna need it!!) Don't build something until you need it 
     
     3.	Communication ability 
     
