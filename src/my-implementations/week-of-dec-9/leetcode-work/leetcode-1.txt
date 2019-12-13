@@ -18,5 +18,5 @@ var twoSum = function(nums, target) {
     
 };
 
-//Less Naive Solution
+//Less Naive Solution Attempt
 

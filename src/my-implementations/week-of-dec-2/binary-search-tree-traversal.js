@@ -21,7 +21,7 @@ function depthFirstSearchBSTRecursive(bst, order = 'in') {
     let currentNode = bst.root;
 
     let preOrder = node => {
-        node && result.push(node.vaue);
+        node && result.push(node.value);
         preOrder(node.left);
         preOrder(node.right)
     }

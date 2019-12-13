@@ -7,7 +7,7 @@ var findKthLargest = function(nums, k) {
     return result[k - 1];
 };
 
-//Actually doing work attempt at a solution
+//Actually doing work attempt at a solution attempt
 
 var findKthLargest = function(nums, k) {
     let result = [];
@@ -48,5 +48,5 @@ var findKthLargest = function(nums, k) {
     return result[0];
 };
 
-//Quick-Sort Augmentation Solution
+//Quick-Sort Augmentation Solution Attempt
 

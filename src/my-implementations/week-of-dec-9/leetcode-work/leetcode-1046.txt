@@ -1,6 +1,6 @@
 1046. Last Stone Weight
 
-//Semi-LOL Solution
+//Semi-LOL Solution Attempt
 
 /**
  * @param {number[]} stones
