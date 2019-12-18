@@ -1,0 +1,65 @@
+Divisor Game
+
+//Tests
+describe ('divisorGame', () => {
+    it('Should return true if player 1 wins', () => {
+        expect(divisorGame(2).toBe(true));
+    });
+
+    it('Should return false if player 1 loses', () => {
+        expect(divisorGame(3).toBe(false));
+    });
+});
+
+describe ('selectAnX', () => {
+    it('Should return the largest possible x for a given number', () => {
+        expect(selectAnX(100).toBe(50));
+        expect(selectAnX(3).toBe(1));
+        expect(selectAnX(5).toBe(1));
+        expect(selectAnX(9).toBe(3));
+    });
+});
+
+//Not even a lol solution :'(
+
+/**
+ * @param {number} N
+ * @return {boolean}
+ */
+var divisorGame = function(N) {
+    return N % 2 == 0;
+};
+
+//DP solution attempt
+
+/**
+ * @param {number} N
+ * @return {boolean}
+ */
+var divisorGame = function(N) {
+    let currentNum = N;
+    let player1Win = false;
+
+    while(currentNum > 1) {
+        currentNum -= selectAnX(currentNum);
+
+        player1Win = !player1Win;        
+    }
+
+    return player1Win;
+};
+
+function selectAnX (currentNum) {
+    let divisor = 2;
+
+    while(currentNum % divisor !== 0) {
+        if(divisor > (currentNum / 2)) {
+            divisor = 1;
+        } else {
+            divisor++;
+        }
+    }
+
+    let x = currentNum / divisor;
+    return x;
+}

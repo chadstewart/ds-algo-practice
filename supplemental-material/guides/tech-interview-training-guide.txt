@@ -7,12 +7,12 @@ Main skills to work on:
             i.	 Repeat the problem in your own words 
             ii.	 Check assumptions and ask clarifying questions *e.g. clarify intended input, clarify intended output, clarify edge cases, performance constraints 
             iii. Use real examples *Use real input to illustrate what the working solution would look like, ignore implementation 
-            iv.	 Validate your understanding *Write informal tests which covers output validation and constraints 
+            iv.	 Validate your understanding *Write informal tests which covers output validation and constraints, start with previously defined examples
         
         b.	Brainstorm solutions and select one *Always start with the brute force solution 
         
             i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
-            ii.	 Brainstorm multiple optimizations of previous solutions based on space/time complexity optimization 
+            ii.	 Brainstorm optimizations of previous solutions based on space/time complexity optimization 
             iii. Determine practicality of implementation, what trade-offs can be made for the problem 
 
         c.  Implement solution
