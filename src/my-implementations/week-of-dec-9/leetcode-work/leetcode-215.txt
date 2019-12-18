@@ -7,7 +7,7 @@ var findKthLargest = function(nums, k) {
     return result[k - 1];
 };
 
-//Actually doing work attempt at a solution attempt
+//Actually doing work attempt at a solution
 
 var findKthLargest = function(nums, k) {
     let result = [];
