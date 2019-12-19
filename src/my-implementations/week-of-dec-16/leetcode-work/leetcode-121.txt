@@ -1,0 +1,49 @@
+Best Time to Buy and Sell Stock
+
+//Tests
+describe('maxProfit', () => {
+    it('should return max profit of an array', () => {
+        expect(maxProfit([7,1,5,3,6,4])).toBe(5);
+
+        expect(maxProfit([7,6,4,3,1])).toBe(0);
+    });
+});
+
+describe('minMaxSelection', () => {
+    it('should return the minimum then maximum value higher than the minimum of the array', () => {
+        expect(maxProfit([7,1,5,3,6,4])).toBe([1, 6]);
+
+        expect(maxProfit([7,6,4,3,1])).toBe([1, 1]);
+    });
+});
+
+//Solution Attempt
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+
+    let minMaxSelection = prices => {
+        let min = prices[0];
+        let max = min;
+
+        for(let i = 1; i < prices.length; i++) {
+            let temp = Math.min(min, prices[i]);
+
+            if(temp < min) {
+                min = max = temp;
+            }
+
+            max = Math.max(max, prices[i]);
+        }
+
+        return [min, max];
+    }
+
+    result = minMaxSelection(prices);
+
+    return (result[1] - result[0]);
+    
+};
