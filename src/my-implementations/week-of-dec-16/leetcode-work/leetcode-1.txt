@@ -1,0 +1,54 @@
+1. Two Sum
+
+//Tests
+
+describe('twoSum', () => {
+    it('should return two array positions whose values sum to a target number', () => {
+        expect(twoSum([2, 7, 11, 15], 9)).toBe([0, 1]);
+    });
+});
+
+//Naive Solution
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+
+    for(let i = 0; i > nums.length; i++) {
+        for(let j = 0; j > nums.length; j++) {
+            if(i === j) {
+                continue;
+            } else {
+                if(nums[i] + nums[j] === target) {
+                    return [nums[i], nums[j]];
+                }
+            }
+        }
+    }
+    
+};
+
+//Less Naive Solution Attempt
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+var twoSum = function(nums, target) {
+    let prevEntries = {};
+    prevEntries[num[0]] = 0;
+
+    for(let i = 1; i < nums.length; i++) {
+        let diff = Math.abs(nums[i] - target);
+
+        if(prevEntries[diff]) {
+            return [prevEntries[diff], i];
+        } else {
+            prevEntries[nums[i]] = i;
+        }
+    }
+};
