@@ -12,14 +12,14 @@ Main skills to work on:
         b.	Brainstorm solutions and select one *Always start with the brute force solution 
         
             i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
-            ii.	 Brainstorm optimizations of previous solutions based on space/time complexity optimization 
-            iii. Determine practicality of implementation, what trade-offs can be made for the problem 
+            ii.	 Determine practicality of implementation, what trade-offs can be made for the problem
+            iii. Brainstorm optimizations of previous solutions based on space/time complexity optimization 
 
         c.  Implement solution
 
             i.	 Choose a best-fit solution after previous analysis. *Get interviewer approval before writing any executable code
             ii.  Implement chosen solution, writing clean and easy to read code that will fulfill pre-written test cases.
-            iii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question.
+            iii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question with previous brain-storming technique.
     
     2.	Coding ability *a.k.a. produce a good code sample (Tactics) 
     
