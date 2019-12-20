@@ -1,0 +1,35 @@
+Contains Duplicate
+
+//Tests
+describe('containsDuplicate', () => {
+    it('should return true even when duplicates are not next to each other', () => {
+        expect(containsDuplicate([1,2,3,1])).toBeTruthy();
+    });
+
+    it('should return false when no duplicates are found', () => {
+        expect(containsDuplicate([1,2,3,4])).toBeFalsy();
+    });
+
+    it('should return true even when duplicates are next to each other', () => {
+        expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toBeTruthy();
+    });
+});
+
+//Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    let isInArray = {};
+
+    for(let i = 0; i < nums.length < i++) {
+        if(isInArray[nums[i]]) {
+            return true;
+        }
+        
+        isInArray[nums[i]] = true;
+    }
+
+    return false;    
+};

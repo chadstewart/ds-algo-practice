@@ -18,7 +18,7 @@ Main skills to work on:
         c.  Implement solution
 
             i.	 Choose a best-fit solution after previous analysis. *Get interviewer approval before writing any executable code
-            ii.  Implement chosen solution, writing clean and easy to read code that will fulfill pre-written test cases.
+            ii.  Implement chosen solution, writing clean and easy to read code that will fulfill pre-written test cases. *Ensure you check the test cases!!!
             iii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question with previous brain-storming technique.
     
     2.	Coding ability *a.k.a. produce a good code sample (Tactics) 
@@ -31,8 +31,7 @@ Main skills to work on:
         
         b.	Ensure your code is actually solving the problem presented 
         
-            i.	Step through the code line by line and ensure it passes pre-written test cases 
-        
+            i.	Step through the code line by line and ensure it passes pre-written test cases         
         
         c.	Modular *Code-block can be reused through reference and is unit-testable D.R.Y (Do not repeat yourself) 
         

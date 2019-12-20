@@ -1,0 +1,30 @@
+Product of Array Except Self
+
+//Tests
+describe('productExceptSelf', () => {
+    it('should return an array where each element is a product of only the other elements in the array', () => {
+        expect(productExceptSelf([1,2,3,4])).toEqual([24,12,8,6]);
+    });
+
+    it('should return an array of products even if one of the elements is not 1', () => {
+        expect(productExceptSelf([2,3,4,5])).toEqual([60,40,30,24]);
+    })
+});
+
+//Naive Invalid Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    
+};
+
+//Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    
+};
