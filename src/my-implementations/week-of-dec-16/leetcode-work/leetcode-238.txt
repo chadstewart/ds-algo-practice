@@ -17,7 +17,24 @@ describe('productExceptSelf', () => {
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    
+    let result = [];
+    let product = 0;
+
+    for(let i = 0; i < nums.length; i++) {
+        product = 0;
+
+        for(let j = 0; j < nums; j++) {
+            if(j === i) {
+                continue;
+            }
+
+            product *= nums[j];
+        }
+
+        result.push[product];
+    }
+
+    return result;    
 };
 
 //Solution Attempt
@@ -26,5 +43,32 @@ var productExceptSelf = function(nums) {
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    
+    let result = [];
+    let tempR = [];
+    let tempL = [];
+
+    for(let i = 0; i < nums.length; i++) {
+        if(i === 0) {
+            tempR[i] = 1;
+        }
+
+        tempR[i] = nums[i - 1] * tempR[i - 1];
+    }
+
+    for(let i = nums.length - 1; i < 0; i--) {
+        if(i === nums.length - 1) {
+            tempR[i] = 1;
+        }
+
+        tempR[i] = nums[i + 1] * tempR[i + 1];
+    }
+
+    for(let i = 0; i < nums.length; i++) {
+        result.push(tempL[i] * tempR[i]);
+    }
+
+    return result;    
 };
+
+//Solution Explanation
+The goal is to get two arrays, one with products of each previous entry incrementing to the right and the other to the left. Then add those two arrays together to get the resulting array to return.
