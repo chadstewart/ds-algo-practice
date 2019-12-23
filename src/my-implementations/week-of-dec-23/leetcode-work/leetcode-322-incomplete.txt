@@ -1,0 +1,110 @@
+Coin Change
+
+//Tests
+describe('coinChange', () => {
+    it('should return lowest number of currentCoins needed for amount without change') {
+        expect(coinChange([1,2,5], 11)).toBe(3);
+        expect(coinChange([2, 3, 5, 8]), 11).toBe(2);
+        expect(coinChange([2], 3)).toBe(-1);
+    }
+})
+
+//Solution Attempt ***Incomplete (assumed array was sorted)
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+var coinChange = function(coins, amount) {
+    let currentAmount = 0;
+    let coinCount = 0;
+
+    let doCalc = (currentCoins, amount) => {
+        for(let i = currentCoins.length - 1; i >= 0; i--) {
+            coinCount = Math.floor(amount / currentCoins[i]);
+
+            if(coinCount < 1) {
+                continue;
+            } else {
+                currentAmount = amount - (currentCoins[i] * coinCount);
+            }
+
+            if(currentAmount === 0) {
+                return currentAmount;
+            } else {
+                doCalc(currentAmount, currentCoins.slice(0, currentCoins.length - 2));
+            }
+        }
+    };
+};
+
+//DP Solution 1
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+var coinChange = function(coins, amount) {
+    if(amount<0){
+        return 0
+    }
+    let count = new Array(amount).fill(0);
+    function helper(coins, amount , count){
+        if(amount < 0){return -1;}
+        if(amount == 0){
+            return 0;
+        }
+        if(count[amount-1] != 0){
+            return count[amount-1]
+        }
+        
+        let min = Number.POSITIVE_INFINITY;
+        for(let i = 0;i<coins.length;i++){
+            let coin = coins[i];
+            let result = helper(coins,amount-coin,count)
+            if(result >= 0 && result < min){
+                min = 1 + result;
+            }
+        }
+        count[amount-1] = (min ==  Number.POSITIVE_INFINITY) ? -1 : min;
+        return count[amount-1]
+    }
+    return helper(coins, amount, count)
+};
+
+//DP Solution 2
+
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+var coinChange = function(coins, amount) {    
+    var dp = [0];
+    for(var i = 1; i <= amount; i++) {
+        dp.push(-1);
+    }
+    
+
+    for(var a = 0; a < amount; a++) {
+        if(dp[a] < 0) {
+            continue;
+        }
+        
+        for(var c = 0; c < coins.length; c++) {
+            var coin = coins[c];
+            
+            if((a + coin) > amount) {
+                continue;
+            }
+            
+            // if(dp[a + coin] < 0 || dp[a + coin] > dp[a] + 1) {
+            if(dp[a + coin] < 0) {
+                dp[a + coin] = dp[a] + 1;
+            }
+        }
+    }
+    console.log(dp)
+    console.log(dp[amount])
+    return dp[amount];
+};
