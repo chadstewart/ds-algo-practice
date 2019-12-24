@@ -1,0 +1,10 @@
+Went through my first interview with Pramp. Most important takeaway from the interview:
+
+Become better at translating thoughts to code.
+
+Noticed my peer wrote his thoughts down in a type of skeleton. A major benefit is it gets the thoughts out of his head where they can degrade and onto some permanent medium. I personally might do a skeleton for the program I'm writing or just writing stuff informally so I can just follow that, not sure. Peer warned about the amount of boilerplate in doing a problem so I'll have to look into picking and choosing what boilerplate I decide to keep. For sure I will write test cases even though I didn't write any today cause that's extremely important to show you can do.
+
+In Summary:
+
+Work on both solving the problem in words and then translating those words to code.
+Decide how to formalize previous strategy into something that is repeatable.
