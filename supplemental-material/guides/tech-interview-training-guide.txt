@@ -12,14 +12,21 @@ Main skills to work on:
         b.	Brainstorm solutions and select one *Always start with the brute force solution 
         
             i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
-            ii.	 Determine practicality of implementation, what trade-offs can be made for the problem
-            iii. Brainstorm optimizations of previous solutions based on space/time complexity optimization 
+            ii.  Transcribe this solution into written form when practical, taking into account very minor implementation details
+            iii. Determine practicality of implementation, what trade-offs can be made for the problem
+            iv.  Brainstorm optimizations of previous solutions based on space/time complexity optimization and edit transcribed solution accordingly
+            v.	 Choose a best-fit solution after previous analysis *Get interviewer approval before writing any executable code
 
         c.  Implement solution
 
-            i.	 Choose a best-fit solution after previous analysis. *Get interviewer approval before writing any executable code
-            ii.  Implement chosen solution, writing clean and easy to read code that will fulfill pre-written test cases. *Ensure you check the test cases!!!
-            iii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question with previous brain-storming technique.
+            i.  Implement chosen solution, writing clean and easy to read code
+                 
+                a. Self-descriptive variables 
+                b. Self-descriptive methods 
+                c. If a code-block warrants explanation, put it in a method and properly name the method
+                d. Test the code by walking through it with pre-written test cases and make adjustments where necessary
+            
+            ii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question with previous brain-storming technique.
     
     2.	Coding ability *a.k.a. produce a good code sample (Tactics) 
     

@@ -1,0 +1,86 @@
+Clone Graph
+
+//Tests
+describe('cloneGraph', => {
+    it('should return an exact copy of the graph but with different references', => {
+        let node = {
+            value: 1,
+            neighbors: {"$id":"1","neighbors":[{"$id":"2","neighbors":[{"$ref":"1"},{"$id":"3","neighbors":[{"$ref":"2"},{"$id":"4","neighbors":[{"$ref":"3"},{"$ref":"1"}],"val":4}],"val":3}],"val":2},{"$ref":"4"}],"val":1};
+        }
+        expect(node).not.toEqual(cloneGraph(node));
+        expect(cloneGraph(node)).toEqual({value: 1, neighbors: {"$id":"1","neighbors":[{"$id":"2","neighbors":[{"$ref":"1"},{"$id":"3","neighbors":[{"$ref":"2"},{"$id":"4","neighbors":[{"$ref":"3"},{"$ref":"1"}],"val":4}],"val":3}],"val":2},{"$ref":"4"}],"val":1}});
+    })
+})
+
+//Procedure
+Traverse given graph
+- Use breadth-first search to get nodes
+- return list of nodes
+
+Make copy of the graph
+- Make new objects (vertexes)
+- fill objects with values
+- properly add node references
+  - use filter method by objects tag property
+
+//Solution Attempt
+/**
+ * // Definition for a Node.
+ * function Node(val,neighbors) {
+ *    this.val = val;
+ *    this.neighbors = neighbors;
+ * };
+ */
+/**
+ * @param {Node} node
+ * @return {Node}
+ */
+var cloneGraph = function(node) {
+
+    let getGraph = node => {
+        let queue = [node];
+        let visited = [];
+
+        while(queue.length !== 0) {
+            let currentNode = queue.shift();
+            
+            for(let i = 0; i < currentNode.neighbors.length; i++) {
+                queue.concat(currentNode.neighbors.filter(n => !visited.includes(n)));
+            }
+
+            visited.push(currentNode);
+        }
+
+        return visited;
+    };
+
+    let makeCopy = graphCopy => {
+        let newGraph = [];
+        let graphRef = {};
+
+        for(let i = 0; i < graphCopy.length; i++) {
+            let currentNode = graphCopy[i];            
+
+            newGraph.push({
+                id: currentNode.id,
+                neighbors: currentNode.neighbors;
+            });
+            graphRef[currentNode.id] = currentNode;
+        }
+
+        for(let k = 0; k < newGraph.length; k++) {
+            let currentNode = newGraph[k];
+
+            for(let l = 0; l < currentNode.neighbors.length; l++) {
+                currentNode.neighbors[k] = graphRef[
+                    currentNode.neighbors[k].id
+                ];
+            }
+        }
+
+        return newGraph[0];
+    };
+
+    return makeCopy(getGraph(node));
+    
+};
