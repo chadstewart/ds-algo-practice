@@ -1,0 +1,7 @@
+Went through my second pramp interview:
+
+Same issue as before, jumping into the code before actually coming up with a good example first. Words are ironically more pliable than code. I think I just need to take this week to do a lot of questions and just take the time really employ my problem-solving strategy. Outside of that, interviewer said I was pretty good. I did mess up on time complexity and what I really messed up was describing the time complexity properly. I said O(n) for the number of nodes you had to traverse but really I needed to describe in terms of the tree itself and how to solution is working. The answer is O(log n) where log n is the height of the tree.
+
+Might use Leetcode practice for repetition and solidifying core concepts rather than expanding my understanding. I'll think more on it later.
+
+TL;DR TAKE YOUR DAMN TIME!! CODE WILL BE THERE!!

@@ -1,0 +1,31 @@
+Drone Flight Planner
+
+//Tests
+describe('calcDroneMinEnergy', () => {
+    it('should return minimum energy needed to complete a given route' () => {
+        let route = [ [0,   2, 10],
+                  [3,   5,  0],
+                  [9,  20,  6],
+                  [10, 12, 15],
+                  [10, 10,  8] ];
+
+        expect(calcDroneMinEnergy(route)).toBe(5);
+    })
+})
+
+//Procedure
+
+//Solution Attempt
+function calcDroneMinEnergy(route) {
+  // your code goes here
+  
+  let diff = 0;
+  let min = 0;
+
+  for(let i = 1; i < route.length; i++) {
+      diff = diff + (route[i][2] - route[i - 1][2]);
+      min = Math.max(min, diff);
+  }
+ 
+  return min;
+}
