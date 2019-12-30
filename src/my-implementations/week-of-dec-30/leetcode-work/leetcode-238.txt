@@ -1,0 +1,114 @@
+Product of Array Except Self
+
+//Tests
+describe('productExceptSelf' () => {
+    it('should return an array with products of all elements other than itself for each element', () => {
+        let array = [1,2,3,4];
+        let result = [24,12,8,6];
+
+        expect(productExceptSelf(array)).toEqual(result);
+    });
+});
+
+//Procedure
+Create two arrays
+
+Increment through both arrays, one from start to end and from end to start:
+- multiple element by previous element
+
+Add both arrays together
+
+//Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    let result1 = [1];
+    let result2 = [1];
+
+    for(let i = 1; i < nums.length; i++) {
+        result1[i] = nums[i - 1] * result1[i - 1];
+    }
+
+    for(let j = nums.length - 2; i >= 0; i--) {
+        result2[j] = nums[j + 1] * result2[j + 1];
+    }
+
+    for(let k = 0; k < nums.length; k++) {
+        result1[k] = result1[k] + result2[k];
+    }
+
+    return result1;
+};
+
+//O(1) Tests
+describe('productExceptSelf' () => {
+    it('should return an array with products of all elements other than itself for each element', () => {
+        let array = [2,3,4,5];
+        let result = [60,40,30,24];
+
+        expect(productExceptSelf(array)).toEqual(result);
+    });
+});
+
+//O(1) Procedure
+
+Create variable that will hold product of array
+
+Divide product by element to get value for that position
+-  Do it without actually dividing total
+
+//O(1) Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    let total = 1;
+
+    for(let i = 0; i < nums.length; i++) {
+        total *= nums[i];
+    }
+
+
+    return nums;
+    
+};
+
+//O(1) Solution
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    // Final answer array to be returned
+    let result = [1];
+
+    // result[i] contains the product of all the elements to the left
+    // Note: for the element at index '0', there are no elements to the left,
+    // so the result[0] would be 1
+    for(let i = 1; i < nums.length; i++) {
+        
+        // result[i - 1] already contains the product of elements to the left of 'i - 1'
+        // Simply multiplying it with nums[i - 1] would give the product of all 
+        // elements to the left of index 'i'
+        result[i] = nums[i - 1] * result[i - i];
+    }
+
+    // R contains the product of all the elements to the right
+    // Note: for the element at index 'length - 1', there are no elements to the right,
+    // so the R would be 1
+    let R = 1;
+
+    for(let i = nums.length - 1; i >= 0; i--) {
+        
+        // For the index 'i', R would contain the 
+        // product of all elements to the right. We update R accordingly
+        result[i] = result[i] * R;
+        R *= nums[i];
+    }
+
+    return result;
+    
+};

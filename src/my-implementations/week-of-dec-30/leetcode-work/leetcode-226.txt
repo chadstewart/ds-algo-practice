@@ -1,0 +1,76 @@
+Invert Binary Tree
+
+//Tests
+describe('invertTree', () => {
+    it('should invert a tree structure', () => {
+        //I really don't want to build an actual tree. XD
+
+        let root = {
+            val: *some value*,
+            left: *some pointer*,
+            right: *some pointer*
+        }
+
+        let tree = {
+               4
+             /   \
+            2     7
+           / \   / \
+          1   3 6   9
+        };
+
+        let treeInverted = {
+               4
+             /   \
+            7     2
+           / \   / \
+          9   6 3   1
+        };
+        
+        let result = invertTree(root);
+        expect(result).toEqual(treeInverted);
+    });
+});
+
+//Procedure
+Implement a bfs algorithm.
+
+Swap left and right pointers for each node.
+
+//Solution
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    let queue = [root];
+    
+    let swap = node => {
+        let temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+    };
+
+    while(queue.length !== 0) {
+        let currentNode = queue.shift();
+
+        if(currentNode.left) {
+            queue.push(currentNode.left);
+        }
+
+        if(currentNode.right) {
+            queue.push(currentNode.right);
+        }
+
+        swap(currentNode);
+    }
+
+    return root;
+};

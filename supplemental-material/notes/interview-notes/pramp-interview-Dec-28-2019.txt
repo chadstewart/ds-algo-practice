@@ -4,4 +4,8 @@ Same issue as before, jumping into the code before actually coming up with a goo
 
 Might use Leetcode practice for repetition and solidifying core concepts rather than expanding my understanding. I'll think more on it later.
 
-TL;DR TAKE YOUR DAMN TIME!! CODE WILL BE THERE!!
+TL;DR TAKE YOUR DAMN TIME!! THE PROBLEM WILL STILL BE THERE AFTER YOU THINK ABOUT IT!!
+
+Supplemental:
+
+Also should review meta information for all the ds and algos I've been working on. Just need to remember space/time complexity.

@@ -19,7 +19,7 @@ Main skills to work on:
             
             iv.	 Validate your understanding *Write informal tests which covers output validation and constraints, start with previously defined examples
 
-            *Steps ii - iv is an attempt to tackle ambiquity and formally define the space the solution must exist in
+            *Steps ii - iv are attempts to tackle ambiquity and formally define and reduce the space the solution must exist in
         
         b.	Brainstorm solutions and select one *Always start with a brute force solution 
         
