@@ -1,0 +1,44 @@
+Longest Substring Without Repeating Characters
+
+//Tests
+describe('lengthOfLongestSubstring', () => {
+    it('should return the length of the longest substring', () => {
+        let test1 = 'abcabcbb';
+        let test2 = 'bbbb';
+        let test3 = 'pwwkew';
+
+        expect(lengthOfLongestSubstring(test1)).toBe(3);
+        expect(lengthOfLongestSubstring(test2)).toBe(1);
+        expect(lengthOfLongestSubstring(test3)).toBe(3);
+    })
+})
+
+//Procedure
+Iterate through string and add each unique letter to object, marking as true, while incrementing unique character counter.
+
+Check object for previous letters. If found, compare and max to a max variable, reset string counter, clear object. 
+
+//Solution Attempt
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let letterCheck = {};
+    let maxLength = 0;
+    let unique = 0;
+
+    for(let i = 0; i < s.length; i++) {
+        if(letterCheck[s[i]]) {
+            maxLength = Math.max(unique, maxLength);
+            unique = 0;
+            letterCheck = {};
+        } else {
+            letterCheck[s[i]] = true;
+            unique++;
+        }
+    }
+
+    return maxLength;
+    
+};

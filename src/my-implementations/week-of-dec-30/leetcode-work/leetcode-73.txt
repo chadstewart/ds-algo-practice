@@ -1,0 +1,73 @@
+Set Matrix Zeroes
+
+//Tests
+describe('setZeroes', () => {
+    it('should write zeroes in the rows and columns where a zero appears', () => {
+        let test1 = [
+                      [1,1,1],
+                      [1,0,1],
+                      [1,1,1]
+                    ];
+
+        let answer1 = [
+                      [1,0,1],
+                      [0,0,0],
+                      [1,0,1]
+                    ];
+
+        let test2 = [
+                      [0,1,2,0],
+                      [3,4,5,2],
+                      [1,3,1,5]
+                    ];
+                    
+        let answer2 = [
+                      [0,0,0,0],
+                      [0,4,5,0],
+                      [0,3,1,0]
+                    ];
+        
+        expect(setZeroes(test1)).toEqual(answer1);
+        expect(setZeroes(test2)).toEqual(answer2);
+    });
+});
+
+//Procedure
+Scan the entire matrix, save all the array positions that has a zero.
+
+With those positions, determine which rows and which columns will be rewritten with zeros.
+
+Loop through the array and write zeros in the previously identified rows and columns.
+
+//Solution Attempt
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var setZeroes = function(matrix) {
+    let zeroRows = {};
+    let zeroColumns = {};
+
+    for(let i = 0; i < matrix[0].length; i++) {
+        for(let j = 0; j < matrix.length; j++) {
+            if(matrix[j][i] === 0) {
+                if(!zeroRows[i]) {
+                    zeroRows[i] = true;
+                }
+
+                if(!zeroColumns[j]) {
+                    zeroColumns[j] = true;
+                }
+            }
+        }
+    }
+
+    for(let i = 0; i < matrix[0].length; i++) {
+        for(let j = 0; j < matrix.length; j++) {
+            if(zeroRows[i] || zeroColumns[j]) {
+                matrix[j][i] = 0;
+            }
+        }
+    }
+    
+};
