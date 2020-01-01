@@ -1,0 +1,7 @@
+This is my third mock interview with Pramp. Have two more scheduled for the week.
+
+Made sure to write down the procedure as well but didn't write tests which was a little disheartening but that's okay. Tests are much less needed when a clear cut example is given. The procedure has really been helping me and my interviewer understand what I'm writing but I didn't update it as changes needed to be made to the code. Also interesting note; my interviewer read the question to me which left me a bit confused as to how I should proceed. There was some key information that the question gave but he forgot to tell me and kinda screwed up some of my thinking for the problem. Just need to remember to take my time and really understand the question before getting into code. It's actually a little difficult for simpler questions because the question almost screams to finish it quickly.
+
+Main takeaway is to really ensure even for seemingly simple questions that you understand absolutely everything about the question before moving forward, regardless of how the interviewer delivers the question to you. Remember the actual interview will likely have ambiquity baked into the question and you must be able to handle that.
+
+Also did fairly well considering. I'm fairly confident in my ability to pass the phone interview and I still have two weeks left before it.

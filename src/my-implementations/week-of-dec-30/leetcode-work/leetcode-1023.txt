@@ -1,0 +1,49 @@
+Camelcase Matching
+
+//Tests
+describe('camelMatch', () => {
+  it('should return array of booleans that tells the truthiness of a pattern match' () => {
+    let queries1 = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"];
+    let pattern1 = 'FB';
+    let answer1 = [true,false,true,true,false];
+
+    let queries2 = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"];
+    let pattern2 = "FoBa";
+    let answer2 = [true,false,true,false,false];
+
+    expect(camelMatch(queries1, pattern1).toEqual(answer1);
+    expect(camelMatch(queries2, pattern2).toEqual(answers2);
+  });
+});
+
+//Procedure
+Create a for loop and loop through each string in the query array.
+- String compares char in string with pattern and saves boolean if pattern is completely found or not
+
+//Solution Attempt
+/**
+ * @param {string[]} queries
+ * @param {string} pattern
+ * @return {boolean[]}
+ */
+var camelMatch = function(queries, pattern) {
+  let result = [];
+  let patternPlace = 0;
+
+  for(let i = 0; i < queries.length; i++) {
+    for(let j = 0; j < queries[i].length; j++) {
+      if(pattern[patternPlace] === queries[i][j] {
+        patternPlace++;
+      }
+
+      if(patternPlace === pattern.length) {
+        result.push(true);
+        j = queries[i].length;
+      } else if(j === queries[i].length - 1  && patternPlace !== pattern.length) {
+        result.push(false);
+      }
+    }
+  }
+
+  return result;    
+};

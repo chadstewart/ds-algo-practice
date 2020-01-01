@@ -1,0 +1,33 @@
+Busiest Time in the Mall
+
+/*Procedure
+Create array variable to store max and max's position in data array.
+
+Loop through data array, add and subtract number of people per meta data.
+- Check if next timestamp will be different before updating sum
+
+Output max's date.
+*/
+function findBusiestPeriod(data) {
+  // your code goes here
+  let max = [0, 0];
+  let sum = 0;
+  
+  for(let i = 0; i < data.length; i++) {
+    if(data[i][2] === 1) {
+      sum = sum + data[i][1];
+    } else if(data[i][2] === 0) {
+      sum = sum - data[i][1];
+    }
+    
+    if(i === data.length - 1 || data[i][0] !== data[i + 1][0]) {
+    
+      if(sum > max[0]) {
+        max[0] = sum;
+        max[1] = i;
+      }
+    }
+  }
+  
+  return data[max[1]][0];
+}

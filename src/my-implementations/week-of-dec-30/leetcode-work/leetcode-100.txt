@@ -1,0 +1,129 @@
+Same Tree
+
+//Tests
+describe('isSameTree', () = {Camelcase Matching
+
+//Tests
+describe('camelMatch', () => {
+  it('should return array of booleans that tells the truthiness of a pattern match' () => {
+    let queries1 = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"];
+    let pattern1 = 'FB';
+    let answer1 = [true,false,true,true,false];
+
+    let queries2 = ["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"];
+    let pattern2 = "FoBa";
+    let answer2 = [true,false,true,false,false];
+
+    expect(camelMatch(queries1, pattern1).toEqual(answer1);
+    expect(camelMatch(queries2, pattern2).toEqual(answers2);
+  });
+});
+
+//Procedure
+Create a for loop and loop through each string in the query array.
+- String compares char in string with pattern and saves boolean if pattern is completely found or not
+
+//Solution Attempt
+/**
+ * @param {string[]} queries
+ * @param {string} pattern
+ * @return {boolean[]}
+ */
+var camelMatch = function(queries, pattern) {
+  let result = [];
+  let patternPlace = 0;
+
+  for(let i = 0; i < queries.length; i++) {
+    for(let j = 0; j < queries[i].length; j++) {
+      if(pattern[patternPlace] === queries[i][j] {
+        patternPlace++;
+      }
+
+      if(patternPlace === pattern.length) {
+        result.push(true);
+        j = queries[i].length;
+      } else if(j === queries[i].length - 1  && patternPlace !== pattern.length) {
+        result.push(false);
+      }
+    }
+  }
+
+  return result;    
+};
+  it('should check and output a boolean if a tree is the same or not' () => {
+    let tree1 = [1,2,3];
+    let tree2 = [1,2,3];
+    
+    let tree3 = [1,2];
+    let tree4 = [1,null,2];
+
+    expect(isSameTree(tree1, tree2).toBeTruthy();
+    expect(isSameTree(tree3, tree4).toBeFalsy();
+  });
+});
+
+//Procedure
+Write a breath-first search
+
+check each node object's value, if they are not the same, return false.
+
+//Solution Attempt
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+var isSameTree = function(p, q) {
+  let queue = [[p], [q]];
+
+  while(queue[0].length !== 0 || queue[1].length !== 0) {
+    let currNodeP = queue[0].shift();
+    let currNodeQ = queue[1].shift();
+
+    if(currNodeP.val !== currNodeQ.val) {
+      return false;
+    }
+
+    if(currNodeP.left) {
+      queue[0].push(currNodeP.left);
+    }
+
+    if(currNodeP.right) {
+      queue[0].push(currNodeP.right)
+    }
+
+    if(currNodeQ.left) {
+      queue[1].push(currNodeQ.left);
+    }
+
+    if(currNodeQ.right) {
+      queue[1].push(currNodeQ.right)
+    }
+  }
+
+  return true;  
+};
+
+//LOL Solution
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+var isSameTree = function(p, q) {
+  return JSON.stringify(p) === JSON.stringify(q);    
+};
