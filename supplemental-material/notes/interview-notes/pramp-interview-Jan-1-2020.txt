@@ -5,3 +5,5 @@ Made sure to write down the procedure as well but didn't write tests which was a
 Main takeaway is to really ensure even for seemingly simple questions that you understand absolutely everything about the question before moving forward, regardless of how the interviewer delivers the question to you. Remember the actual interview will likely have ambiquity baked into the question and you must be able to handle that.
 
 Also did fairly well considering. I'm fairly confident in my ability to pass the phone interview and I still have two weeks left before it.
+
+Noe: My interviewer said I need to have more confidence in answering questions. I feel like I do have confidence but I'm obviously not really showing it so it's likely something I should think about as well.

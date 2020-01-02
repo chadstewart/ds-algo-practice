@@ -1,0 +1,83 @@
+Spiral Matrix
+
+//Tests
+describe('spiralOrder', () => {
+    it('should return a matrix in spiral order', () => {
+        let test1 = [
+            [ 1, 2, 3 ],
+            [ 4, 5, 6 ],
+            [ 7, 8, 9 ]
+        ];
+        let answer1 = [1,2,3,6,9,8,7,4,5];
+        let test2 = [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+            [9,10,11,12]
+        ];
+        let answer2 = [1,2,3,4,8,12,11,10,9,5,6,7];
+        expect(spiralOrder(test1)).toEqual(answer1);
+        expect(spiralOrder(test2)).toEqual(answer2);
+    });
+});
+
+//Procedure Space/Time Complexity: O(n)/O(n)
+Check the length and width of the matrix
+
+Use length and width to create bounds for the algorithm to loop through
+
+Create algorithm that will read variables at the edge of the matrix
+- Loop ends when pass reaches initial position - 1 
+- Shrink bounds by one per pass
+- Terminate loop when any of the bound's start is greater than its end
+
+
+//Solution Attempt
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var spiralOrder = function(matrix) {
+    let result = [];
+    let length = [0, matrix.length - 1];
+    let width = [0, matrix[0].length - 1];
+
+    while(length[0] <= length[1] && width[0] <= width[1]) {
+        let lengthPoint = length[0];
+        let widthPoint = width[0];
+        let endPoint = length[0] === length [1] ?
+                        [width[1], length[0]] : [width[0], length[0] + 1];
+
+        while(lengthPoint !== endPoint[1] && widthPoint !== endPoint[0]){
+            for(widthPoint; widthPoint <= width[1]; widthPoint++) {
+                result.push(matrix[lengthPoint][widthPoint]);
+            }
+
+            if(length[0] !==  length[1]) {
+                for(lengthPoint; lengthPoint <= length[1]; lengthPoint++) {
+                    result.push(matrix[lengthPoint][widthPoint]);
+                }
+
+                if(width[0] !== width[1]) {
+                    for(widthPoint; widthPoint >= width[0]; widthPoint--) {
+                        result.push(matrix[lengthPoint][widthPoint]);
+                    }
+
+                    for(lengthPoint; lengthPoint >= length[0]; lengthPoint--) {
+                        result.push(matrix[lengthPoint][widthPoint]);
+                    }
+                }
+            }
+        }
+
+        length[0]++;
+        width[0]++;
+        length[1]--;
+        width[1]--;
+    }
+
+    return result;
+    
+};
+
+//Can we do better?
+As of right now, I cannot see a better solution because any solution to decrease the space complexity would involve swapping the variables and then remembering the variable locations which would increase the space complexity to O(n).
