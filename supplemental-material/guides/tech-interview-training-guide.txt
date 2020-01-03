@@ -24,8 +24,8 @@ Main skills to work on:
         b.	Brainstorm solutions and select one *Always start with a brute force solution 
         
             i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
-            ii.  Transcribe this solution into written form when practical, taking into account very minor implementation details and space/time complexity
-            iii. Determine the practicality of implementation, what trade-offs can be made for the problem
+            ii.  Transcribe this solution into written form when practical, taking into account some  implementation details and space/time complexity
+            iii. Determine the practicality of implementation, what trade-offs can be made for the problem and edit transcribed solution accordingly
             iv.  Brainstorm optimizations of previous solutions based on space/time complexity optimization and edit transcribed solution accordingly
             v.	 Choose a best-fit solution after previous analysis *Get interviewer approval before writing any executable code
 

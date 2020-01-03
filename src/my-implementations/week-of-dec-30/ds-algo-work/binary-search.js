@@ -3,7 +3,7 @@ function binarySearch (sortedArray, target) {
     let end = sortedArray.length - 1;
 
     while(start < end) {
-        let middle = Math.floor(start + (start - end) / 2);
+        let middle = Math.floor(start + (end - start) / 2);
 
         if(sortedArray[middle] === target) {
             return middle;
