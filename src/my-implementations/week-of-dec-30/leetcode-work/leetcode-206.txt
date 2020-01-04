@@ -1,0 +1,57 @@
+Reverse Linked List
+
+//Tests
+describe('reverseList', () = {
+  it('should reverse a linked list', () => {
+    let node1 = {
+      val: 1,
+      next: node2
+    }
+
+    let node2 = {
+      val: 2,
+      next: null
+    }
+
+    expect(reverseList(node1)).toEqual(node2);
+  });
+});
+
+//Procedure Space/Time Complexity: O(1)/O(n)
+
+Initialize two temps, next and prev. Write a while loop that will
+- Put the current node's next node into next
+- Overwrite the current node's next with prev 
+- Save current node into prev 
+- Transition to the next node use the previously saved next. 
+
+
+//Can we do better?
+We can't because to reverse the list, we have to traverse the entire list.
+
+//Solution Attempt
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+  let currentNode = head;
+  let prev = null;
+  let next = null;
+
+  while(currentNode) {
+    next = currentNode.next;
+    currentNode.next = prev;
+    prev = currentNode;
+    currentNode = next;
+  }
+
+  return prev;  
+};

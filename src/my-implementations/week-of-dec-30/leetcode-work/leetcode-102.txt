@@ -1,0 +1,130 @@
+Level-Order Traversal
+
+//Tests
+describe('levelOrder', () => {
+  it('should print all tree nodes by their level in a seperate array' () = {
+    let test = [3,9,20,null,null,15,7];
+
+    for(let i of test) {
+      graph.add(i);
+    }
+
+    test = graph.search(3);
+
+    let answer = [
+                   [3],
+                   [9,20],
+                   [15,7]
+                 ];
+
+    expect(levelOrder(test)).toEqual(answer);
+  });
+});
+
+//Procedure Space/Time Complexity: O(n)/O(n)
+Implement a breadth-first search algorithm.
+
+Create temp and level variable.
+
+Initialize level variable with root val and add children to temp if apart of root variable.
+
+If not in level variable, add temp to level variable and reset it.
+
+//Can we do better?
+We cannot because we need to traverse the entire tree and must add nodes into a queue to breadth first search.
+
+//Solution Attempt
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrder = function(root) {
+  let queue = [root];
+  let visited = [[root && root.val]];
+  let i = 0;
+  let temp = [];
+
+  while(queue.length !== 0){
+    let currentNode = queue.shift();
+
+    if(!visited[i].includes(currentNode.val)) {
+      visited.push(temp);
+      temp = [];
+      i++;
+    }
+    
+    if(currentNode.left) {
+      queue.push(currentNode.left)
+      temp.push(currentNode.left.val);
+    }
+
+    if(currentNode.right) {
+      queue.push(currentNode.right);
+      temp.push(currentNode.right.val);
+    }
+
+  }
+
+  return visited;
+};
+
+//Delimiter Procedure Space/Time Complexity: O(n)/O(n)
+
+Implement a breadth-first search.
+
+Initialize
+- queue with root and a flag
+- temp variable
+
+Insert node children into queue and their value into temp.
+
+When flag is hit, push temp into results, reset temp and add another flag.
+
+If queue is empty after dequeueing flag then don't add another and return results.
+
+//Delimiter Solution Attempt
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrder = function(root) {
+  let result = [];
+  let queue = [root, null];
+  let temp = [];
+
+  while(queue.length !== 0) {
+    let currentNode = queue.shift();
+
+    if(currentNode === null) {
+      queue.length > 0 && queue.push(null);
+      result.push(temp);
+      temp = [];
+    } else {
+      if(currentNode.left) {
+        queue.push(currentNode.left);
+        temp.push(currentNode.left.val);
+      }
+
+      if(currentNode.right) {
+        queue.push(currentNode.right);
+        temp.push(currentNode.right.val);
+      }
+    }
+  }
+
+  return result;
+};
