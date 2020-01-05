@@ -1,0 +1,53 @@
+Toeplitz Matrix
+
+/*Procedure Space/Time Complexity: O(1)/O(n)
+Iterate through each column, going down x, y + 1 and check if number is the same,
+if not return false.
+*/
+function isToeplitz(arr) {
+	/**
+	@param arr: integer[][]
+	@return: boolean
+	*/
+
+	// your code goes here
+  
+  let diagonalCheck = (row, column) => {
+    let startingRow = row;
+    let value = arr[row][column];
+  
+    while(row < arr.length && column < arr[startingRow].length) {
+      if(arr[row][column] !== value) {
+        return false;
+      }
+      
+      row++, column++;
+    }
+  
+    return true;
+  };
+
+  let execute = () => {
+    let check = true;
+    
+    for(let i = 0; i < arr.length; i++) {
+      check = diagonalCheck(i, 0);
+      
+      if(check === false) {
+        break;
+      }
+    }
+
+    for(let j = 0; j < arr[0].length; j++) {
+      check = diagonalCheck(0, j);
+      
+      if(check === false) {
+        break;
+      }
+    }
+
+    return check;
+  };
+
+  return execute();
+}
