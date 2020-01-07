@@ -1,0 +1,16 @@
+Partition Equal Subset Sum
+
+//Tests
+
+//Procedure Space/Time Complexity:
+
+//Can we do better?
+
+//Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var canPartition = function(nums) {
+    
+};
