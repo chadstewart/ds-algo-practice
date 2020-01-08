@@ -1,0 +1,9 @@
+This would be my 5th pramp interview.
+
+Didn't do too well. The question was easy enough but I got caught up on thinking about an issue of choosing the right bounds for the binary search implementation and I didn't properly implement the middle variable of binary search which caused the algorithm to fail.
+
+Despite all those issues, a major issue which was communicated before was my confidence in my implementation. Not sure how I'm going to work on that, especially in the time left but I need to be wary of that. An issue came up where the interviewer told me to do something and I just did it without questioning his decision. That's a major issue.
+
+I'll think about how to fix it tomorrow.
+
+Side note: when implementing an algorithm, just write the standard algorithm first and then start to modify it to solve the problem statement.
