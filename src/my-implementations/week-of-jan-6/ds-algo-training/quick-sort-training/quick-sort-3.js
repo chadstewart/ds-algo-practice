@@ -21,16 +21,16 @@ function quickSort(array) {
     };
 
     let randomPartition = (start, end) => {
-        let randomNum = Math.floor(Math.random() * (end - start) + start);
+        let randomNum = Math.round(Math.random() * (end - start) + start);
         swap(randomNum, end);
         return partition(start, end);
     };
 
-    let sort = (start = 0, end = array.length - 1) => {
+    let sort = (start = 0, end = array.length -1) => {
         if(start < end) {
-            let partition = randomPartition(start, end);
-            sort(start, partition - 1);
-            sort(partition + 1, end);
+            let chosenPartition = randomPartition(start, end);
+            sort(start, chosenPartition - 1);
+            sort(chosenPartition + 1, end);
         }
     }
 
