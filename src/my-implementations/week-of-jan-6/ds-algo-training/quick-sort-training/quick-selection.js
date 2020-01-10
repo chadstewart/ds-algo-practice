@@ -23,13 +23,13 @@ function quickSelection(array, target) {
     };
 
     let randomPartition = (start, end) => {
-        let randomNum = Math.floor(Math.random() * (end - start + 1));
+        let randomNum = Math.floor(Math.random() * (end - start) + start);
         swap(randomNum, end);
         return partition(start, end);
     };
 
     let sort = (start = 0, end = array.length - 1) => {
-        if(start < end) {
+        if(start < end && !result) {
             let partition = randomPartition(start, end);
 
             if(array[partition] === target) {

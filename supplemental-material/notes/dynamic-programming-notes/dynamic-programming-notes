@@ -1,0 +1,21 @@
+Dynamic Programming Notes:
+
+There are generally three types of Dynamic Programming problems:
+
+1. Count something, often the number of ways
+2. Minimize or maximize certain value
+3. Is an action possible
+
+(for the last two types of questions, always check if a greedy approach would be sufficient in solving the problem first)
+
+When first approaching a potential Dynamic Programming problem, first see if the problem is decomposable into sub-problems and see if those sub-problems when put together would give a solution for problem.
+
+If you are confident that the previous step is possible, begin by looking for the absolute smallest problem or problems you can solve giving your problem's parameters (bottom-up approach).
+
+After that, try identifying a base case that you will need to start with before moving to your smallest problem. i.e. the number of ways to count to 0 given an array without 0 is 0 times.
+
+From there, try to solve a more complex problem using the solution of the previous problems and potentially build a relation between your base solution and new problems. (Remember to save the solution for previous problems and reference them so you don't need to re-compute them *memoization*)
+
+When solving smaller problems to compose into the main problem you're trying to solve, ask "what is important information that I need to remember so far?" That information will be what you need to help compose the more complex answer.
+
+It is good to draw a recursion tree to see how the problem decomposes to see their relationships and to see what you can save to minimize re-computation.

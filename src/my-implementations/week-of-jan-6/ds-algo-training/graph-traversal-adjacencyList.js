@@ -1,5 +1,4 @@
 function dfs(src, graph) {
-    let result = [];
     let stack = [src];
     let visited = [];
 
@@ -9,16 +8,14 @@ function dfs(src, graph) {
 
     while(stack.length !== 0) {
         let currentNode = stack.pop();
-        stack.concat(getUnvisited(currentNode));
+        stack = stack.concat(getUnvisited(currentNode));
         visited.push(currentNode);
-        result.push(currentNode);
     }
 
-    return result;
+    return visited;
 }
 
 function bfs(src, graph) {
-    let result = [];
     let queue = [src];
     let visited = [];
 
@@ -28,10 +25,9 @@ function bfs(src, graph) {
 
     while(queue.length !== 0) {
         let currentNode = queue.shift();
-        stack.concat(getUnvisited(currentNode));
+        stack = stack.concat(getUnvisited(currentNode));
         visited.push(currentNode);
-        result.push(currentNode);
     }
 
-    return result;
+    return visited;
 }
