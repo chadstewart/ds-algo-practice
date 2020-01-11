@@ -1,17 +1,18 @@
 function mergeSort(array) {
     let merge = (left, right) => {
         let result = [];
-
+        
         while(left.length && right.length) {
-            result.push(left[0] <= right[0] ? left.shift() : right.shift());
+            left[0] <= right[0] ? result.push(left.shift()) : result.push(right.shift());
         }
 
         return result.concat(left.concat(right));
-
+        
     };
 
     let sort = array => {
         let {length} = array;
+
         if(length > 1) {
             let middle = Math.round(length / 2);
             let left = sort(array.slice(0, middle));
@@ -22,8 +23,7 @@ function mergeSort(array) {
         return array;
     };
 
-    return sort(array);
-
+    sort(array);
 }
 
 function quickSort(array) {
@@ -31,7 +31,7 @@ function quickSort(array) {
         let temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
-    };
+    }
 
     let partition = (start, end) => {
         let pivot = array[end];
@@ -49,7 +49,7 @@ function quickSort(array) {
     };
 
     let randomPartition = (start, end) => {
-        let randomNum = Math.round(Math.random() * (end - start)) + start;
+        let randomNum = Math.floor(Math.random() * (end - start) + start);
         swap(randomNum, end);
         return partition(start, end);
     };
@@ -61,4 +61,6 @@ function quickSort(array) {
             sort(chosenPartition + 1, end);
         }
     };
+
+    sort();
 }
