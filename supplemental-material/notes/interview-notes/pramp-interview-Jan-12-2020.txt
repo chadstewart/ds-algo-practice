@@ -1,0 +1,11 @@
+This was my sixth mock interview.
+
+The interview went okay. I got some interesting feedback and had some really good conversations with the interviewer, so the interview was quite productive. There were two things he said he liked that I did, one I do often and one I don't do often.
+
+He liked that I communicated everything out loud, which I'm pretty happy that I've been doing that all my life, lol. The second thing he did which I don't do often is focus on solving a specific problem first before moving onto another problem. Something I should incorporate more into my problem-solving
+
+Some things he mentioned I should work on is trying to type and speak at the same time. I've always had difficulty doing both but I'll explore attempting both. Ironically, I do this in Street Fighter when I'm analyzing how I should proceed but I can't do it here. Worth exploring. He also mentioned me not thinking of edge conditions which I feel is an issue I've had for sometime and I had noticed myself. He specifically noticed it when I was writing the binary search and I wrote middle wrong by accident. I didn't notice cause I was too busy trying to solve the problem.
+
+Overall, great interview and learned a lot. I'm especially glad that I learned about thinking of arrays more as things in physical space as oppose to just as a meaning to a term. Always something I forget to do with a lot of the data structures except trees and graphs which naturally lend themselves to being thought of as physical things.
+
+Supplemental: Also, I've noticed two things myself. I don't immediately move towards the optimal solution and I have a hard time thinking for myself when being guided. Two things I think I should also work on.
