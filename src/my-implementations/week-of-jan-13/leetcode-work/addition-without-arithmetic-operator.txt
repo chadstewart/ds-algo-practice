@@ -1,0 +1,36 @@
+Addition without '+' Operator
+
+//Tests
+describe('additionWithoutAddSymbol', () => {
+    //Don't know how to practically test the lack of a '+' honestly...
+    it('should add two numbers without the use of an addition symbol', () => {
+        expect(additionWithoutAddSymbol(11,6)).toBe(17);
+    });
+});
+
+//Procedure Proposed Space/Time Complexity:O(1)/O(n) *where n is the number of times there is a carry bit
+Re-construct addition through bitwise operations.
+- Compare bits with bitwise exclusive or and bitwise and
+- If carry is more than 0, left shift the carry bits
+- Repeat same procedure with result and carry bits
+
+//Can we do better?
+We cannot because there isn't away around adding the carry bit to the new result.
+
+//Solution Attempt
+function additionWithoutAddSymbol(num1, num2) {
+    if(typeof num1 !== 'number' || typeof num2 !== 'number') return -1;
+    
+    let result = num1 ^ num2;
+    let carry = num1 & num2;
+    carry > 0 && carry << 1;
+
+    while(carry > 0) {
+        result = result ^ carry;
+        carry = result & carry;
+        carry > 0 && carry << 1;
+    }
+
+    return result;
+
+};

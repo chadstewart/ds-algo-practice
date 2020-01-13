@@ -1,0 +1,40 @@
+Intelligent Girl
+
+//Tests
+describe('intelligentGirl', () => {
+    it('should output a list of number of even numbers per index of array', () =>{
+        let test1 = '574674546476';
+        let result1 = [7,7,7,6,5,5,4,4,3,2,1,1];
+
+        let test2 = '45512';
+        let result2 = [2,1,1,1,1];
+
+        expect(intelligentGirl(test1)).toEqual(result1);
+        expect(intelligentGirl(test2)).toEqual(result2);
+    });
+});
+
+//Procedure Proposed Space/Time Complexity: O(n)/O(n)
+Use bottom up Dynamic Programming technique to count number of even numbers in last array element.
+
+Initialize a result array with whether the last element in the array is even or odd (1 for even, 0 for odd).
+
+Save that answer to result array and use that answer to compute new answer (memoization).
+
+Return result array.
+
+//Can we do better?
+We cannot because we have to read the entirity of the array to know the number of even numbers of each index. If we count the result array as auxillary space then the result array will be the same size as the string.
+
+//Solution Attempt
+function intelligentGirl(string) {
+    let result = [];
+    let {length} = string;
+    result.unshift( string[length - 1] % 2 === 0 ? 1 : 0);
+
+    for(let i = length - 2; i >= 0; i--) {
+        string[i] % 2 === 0 && result.unshift(result[0] + 1);
+    }
+
+    return result;
+}

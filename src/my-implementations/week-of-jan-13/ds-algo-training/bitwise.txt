@@ -1,0 +1,13 @@
+~ bitwse not Operator: Takes an operand and inverts all bits (turns on off and turns off on).
+
+& bitwise and operator: Takes two operands and compares each bit. If both bits are on, then the result will be an on bit, other the bit would be off.
+
+| bitwise or operator: Takes two operands and compares each bit. If either bit is on then the result will be a on bit. If neither bit is on then the resulting bit is off as well.
+
+^ bitwise exclusive or operator: Takes two operands and compares each bit. Only if one of the two bits are on then the resulting bit will be on. If both bits are on or off then the resulting bit will be off.
+
+<< left bit shift: Takes two operands. Moves all bits to the left by right operand. Truncates left most bit and fills right most bit with zero (off).
+
+>> unsigned right bit shift: Takes two operands. Moves all bits to the right by right operand. Truncates right most bit and fills left most bit with zero (off).
+
+>>> signed right bit shift: Takes one operand. Moves all but the right most to the right by one and leaves right most bit (sign bit) unchanged. Filled the second right most bit with zero (off) and truncates the left most bit.
