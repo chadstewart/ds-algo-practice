@@ -1,0 +1,55 @@
+/*
+
+//Procedure Proposed Space/Time Complexity:
+
+Compare source word with array words
+- Find words that differ from source only by one letter
+- Put those in a variable
+
+From found words, iterate through that list and repeat procedure
+
+compare the different list lengths and output the minimum
+
+//Alternate Procedure
+
+From target, compare target with source.
+
+If source can't be changed by one from source then compare words in array and put successful candidates in a list.
+- list will be an array that follows a tree structure for easy maintainence
+
+Compare candidates to target and if they don't match, compare to words other than one in list.
+
+Repeat until there is no word to transform to that hasn't been used.
+
+*/
+function shortestWordEditPath(source, target, words) {
+	/**
+	@param source: string
+	@param target: string
+	@param words: string[]
+	@return: integer
+	*/
+
+	// your code goes here
+  let result = [source];
+  let visited = [];
+  
+  for(let i = 0; i < words.length; i++) {
+    let count  = 0;
+    for(let j = 0; j < words[i].length; j++) {
+      if (result[0][j] === words[i][j]) {
+        count++;
+      } 
+      
+      if(count > 2) {
+        result.push(words[i]);
+        
+        if(words[i] === target) {
+          j = words[i].length;
+          i = words.length;
+        }
+      }
+    }
+  }
+  
+}

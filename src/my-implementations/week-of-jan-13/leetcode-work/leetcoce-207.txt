@@ -1,0 +1,49 @@
+Course Schedule
+
+//Tests
+describe('canFinish', () => {
+    it('should output whether we can complete all courses as a boolean', () => {
+        let test1 = [[1,0]];
+        let test2 = [[1,0],[0,1]];
+
+        expect(canFinish(test1, 2)).toBeTruthy();
+        expect(canFinish(test2, 2)).toBeFalsy();
+    });
+});
+
+//Procedure Proposed Space/Time Complexity: O(n)/O(n)
+(Identify loops in graph)
+Create empty hash table and iterate through the list.
+
+Check each prerequisite to see if the reverse of it appears in the hash table.
+- If it does then return false
+- If it does not, add the prereq to hash table
+
+If list iteration completes then return true.
+
+//Can we do better?
+We can potentially make the space O(1) but that will increase the time complexity since would give up the O(1) look up using the hash table. A solution without a hash table would likely be O(n^2);
+
+//Solution Attempt
+/**
+ * @param {number} numCourses
+ * @param {number[][]} prerequisites
+ * @return {boolean}
+ */
+var canFinish = function(numCourses, prerequisites) {
+    let prereqCheck = {};
+
+    for(let i = 0; i < prerequisites.length; i++) {
+        if(prereqCheck[prerequisites[i][1]]).includes(prerequisites[i][0])) {
+            return false;
+        }
+
+        if(typeof prereqCheck[prerequisites[i][0]] === 'undefined') {
+            prereqCheck[prerequisites[i][0]] = [];
+        }
+        
+        prereqCheck[prerequisites[i][0]].push(prerequisites[i][1]);
+    }
+
+    return true;
+};

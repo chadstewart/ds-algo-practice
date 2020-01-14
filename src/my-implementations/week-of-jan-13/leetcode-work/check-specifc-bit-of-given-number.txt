@@ -1,0 +1,27 @@
+Check Specific Bit
+
+//Tests
+describe('checkBit', () => {
+    it('should return the bit value that was checked', () => {
+        expect(checkBit(23, 2))toBe(1);
+        expect(checkBit(23, 4))toBe(0);
+    })
+});
+
+//Procedure Proposed Space/Time Complexity: O(1)/O(1)
+Bit shift check value left by bit index minus 1.
+
+Compare number with shifted bit index using bitwise and, placing result in a variable.
+
+bit shift result right to single bit and return result.
+
+//Can we do better?
+We are using constant space and constant time so unfortunately not.
+
+//Solution Attempt
+function checkBit(num, bitPosition) {
+    bitPosition--;
+    let bitCheck = 1 << bitPosition;
+    let result = num & bitCheck;
+    return result >> bitCheck;    
+}

@@ -1,0 +1,9 @@
+This would be my 7th mock interview
+
+First of all, the question was quite challenging. I didn't know where to start and to be honest, even afterwards, I still don't know where to begin. I'd say my biggest issue was going into implementation too early. Didn't sit down and reason the problem out long enough. Looking back at it, I may not have gotten into code though since my interviewer cut me off as I was progressing. Didn't like that too much...
+
+This might be my first Pramp session where I don't try to get the solution... At least not today. I think I'm going to take it easy... I'll probably look up the solution online.
+
+...LOL The more I think about it, the more I think I could have come up with a solution but my interviewer was steering me in the wrong direction. Ugh, not that the pressure is off, I can think much clearly on how to complete this, lol. Oh well, I think pressure and being confident in my skills will be my biggest hinderances moving forward.
+
+Take away: Be confident in your solution (within reason since the interviewer has likely asked this question already). Try to not feel pressured by the interview as it impedes thinking. Also, be comfortable not going into implementation too early... In fact, be comfortable not implementing anything before the end of the interview if you aren't completely sure of the interview.
