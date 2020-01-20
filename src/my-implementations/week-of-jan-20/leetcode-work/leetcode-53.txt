@@ -1,0 +1,62 @@
+Maximum Subarray
+
+//Tests
+describe('maxSubArray', () => {
+
+  I/O:
+  expect(maxSubArray([1])).toBe(1);
+  expect(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])).toBe(6);
+
+  Edge Cases:
+  expect(maxSubArray([])).toBe(0);
+  expect(maxSubArray([a])).toBe(-1);
+
+});
+
+//Procedure
+
+  Initial Proposed Solution (Space/Time Complexity: O(1)/O(n^2))
+  For every element in the array, we add its neighbour going left or right and compare the resulting sum to a max.
+
+  Output the max.
+
+  Can we do better?
+  Yes we can. Currently need a pass per element. We can potentially reduce the number of passes to find the max. Maybe choosing the largest first.
+
+  Proposed Optimized Solution (Space/Time Complexity: )
+
+//Solution Attempt
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    
+};
+
+Kadane's Algorithm Solution Space/Time Complexity: O(1)/O(n)
+
+We initalize two answer variables to 0.
+
+We iterate through the array
+- Whenever a sum is less than 0, we re-initalize one of the answer variables.
+
+Return answer
+
+Kadane's Algorithm Solution
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+  let maxSoFar = Number.MIN_VALUE;
+  let maxEndingHere = 0;
+
+  for(let i = 0; i < nums.length; i++) {
+    maxEndingHere += nums[i];
+    maxSoFar < maxEndingHere && maxSoFar = maxEndingHere;
+    maxEndingHere < 0 && maxEndingHere = 0;
+  }
+
+  return maxSoFar;
+};

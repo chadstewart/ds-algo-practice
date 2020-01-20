@@ -1,0 +1,51 @@
+Climbing Stairs
+
+//Tests
+describe('climbStairs', () => {
+
+  I/O:
+  expect(climbStairs(2)).toBe(2);
+  expect(climbStairs(3)).toBe(3);
+
+  Edge Cases:
+  expect(climbStairs(0)).toBe(0);
+  expect(climbStairs()).toBe(-1);
+  expect(climbStairs(a)).toBe(-1);
+
+});
+
+//Procedure
+
+  Initial Proposed Solution Proposed Space/Time Complexity:O(1)/O(n)
+  What can be observed is that this growth is a fibonacci sequence. This means we know the first two answers and can derive the answers from the formula n = f(n-1) + f(n - 2).
+
+  We output the first two answers if they are passed, otherwise we calculate the new answer with the old answers, only saving the last two.
+
+  Can we do better?
+  We cannot do better. The technique used is a Dynamic Programming Memoization technique which is the most optimal solution.
+
+  Proposed Optimized Solution Proposed Space/Time Complexity:
+
+//Solution Attempt
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function(n) {
+    if(typeof n !== 'number') {
+        return -1;
+    }
+
+    let prevSol = [1,1];
+    let result = 0;
+
+    n === 0 && return 0;
+    n === 1 && return prevSol[1];
+
+    for(let i = 2; i <= n; i++) {
+        result = prevSol[1] + prevSol[0];
+        prevSol[0] = prevSol[1];
+        prevSol[1] = result;
+    }
+
+    return result;
+};
