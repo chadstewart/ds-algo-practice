@@ -1,0 +1,44 @@
+Rotate Image
+
+//Tests
+describe('rotate' () => {
+
+  let array1 = [
+                [1,2,3],
+                [4,5,6],
+                [7,8,9]
+               ];
+
+  let rotate1 = [
+                  [7,4,1],
+                  [8,5,2],
+                  [9,6,3]
+                ]
+
+  let isNumber = *iterate through array and check for number*
+
+  I/O:
+  expect(rotate(array1).toEqual(rotate1));
+
+  Edge Cases:
+  expect(rotate1()).toBe(-1);
+  expect(array1.legnth).toBe(array1[0].length);
+  expect(isNumber()).toBeTruthy();
+});
+
+//Procedure:
+
+  Initial Proposed Procedure (Space/Time Complexity: )
+
+  Can we do better?
+
+  Proposed Optimized Procedure (Space/Time Complexity: )
+
+//Solution Attempt:
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var rotate = function(matrix) {
+    
+};

@@ -1,0 +1,54 @@
+Counting bits
+
+//Tests
+
+  I/O:
+
+  Edge Cases:
+
+//Procedure
+
+  Initial Proposed Procedure (Space/Time Complexity: )
+
+  Can we do better?
+
+  Proposed Optimized Solution (Space/Time Complexity: )
+
+//Solution Attempt
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function(num) {
+    let r = new Array(num + 1).fill(0);
+    
+    for(let i = 0; i <= num; i++) {
+        r[i] = r[i & (i - 1)] + 1;
+    }
+
+    return r;
+};
+
+//C++ Example 1 Recurrence Relation: F(n) = F(n & (n – 1)) + 1
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        vector<int> r(num + 1, 0);
+        for (int i = 0; i <= num; i ++) {
+            r[i] = r[i & (i - 1)] + 1;
+        }
+        return r;
+    }
+};
+
+//C++ Example 2 Recurrence Relation: F(n) = F(n/2) if n is even; F(n) = F(n/2) + 1 if n is odd; or F(n) = F(n >> 1) + n & 1
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        vector<int> r(num + 1, 0);
+        for (int i = 0; i <= num; i ++) {
+            r[i] = r[i >> 1] + (i & 1);
+        }
+        return r;
+    }
+};
