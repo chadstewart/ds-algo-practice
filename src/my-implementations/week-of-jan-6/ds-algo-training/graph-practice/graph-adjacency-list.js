@@ -55,7 +55,7 @@ class LinkedList {
             currentNode = currentNode.next;
         }
 
-        return currentNode;
+        return result;
     }
 }
 
