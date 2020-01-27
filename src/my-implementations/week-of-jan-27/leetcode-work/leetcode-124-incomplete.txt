@@ -1,0 +1,94 @@
+Binary Tree Maximum Path
+
+//Tests
+describe('maxPathSum', () => {
+
+  tree1: [1,2,3]
+  tree2: [-10,9,20,null,null,15,7]
+  tree3: [-1,-2,-3]
+
+  I/O:
+  expect(maxPathSum(root1)).toBe(6);
+  expect(maxPathSum(root2)).toBe(42);
+
+  Edge Cases:
+  expect(maxPathSum(emptyRoot)).toBe(null);
+  expect(maxPathSum(root3)).toBe(-1);
+  (if root has more than two possible children)
+
+});
+
+//Procedure: 
+
+  Initial Proposed Procedure: (Proposed Space/Time Complexity: O(n)/O(n))
+  Depth first search through entire tree.
+
+  Delete negative nodes one by one from tree and compare sub-trees that are left behind.
+
+  Can we do better?
+  We may be able to complete this exercise in one past but currently unsure.
+
+  Optimized Proposed Procedure: (Proposed Space/Time Complexity: )
+
+//Solution Attempt:
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxPathSum = function(root) {
+    
+};
+
+//Solution - Java
+int findMaxUtil(Node node, Res res) 
+    { 
+  
+        // Base Case 
+        if (node == null) 
+            return 0; 
+  
+        // l and r store maximum path sum going through left and 
+        // right child of root respectively 
+        int l = findMaxUtil(node.left, res); 
+        int r = findMaxUtil(node.right, res); 
+  
+        // Max path for parent call of root. This path must 
+        // include at-most one child of root 
+        int max_single = Math.max(Math.max(l, r) + node.data, 
+                                  node.data); 
+  
+  
+        // Max Top represents the sum when the Node under 
+        // consideration is the root of the maxsum path and no 
+        // ancestors of root are there in max sum path 
+        int max_top = Math.max(max_single, l + r + node.data); 
+  
+        // Store the Maximum Result. 
+        res.val = Math.max(res.val, max_top); 
+  
+        return max_single; 
+    } 
+  
+    int findMaxSum() { 
+        return findMaxSum(root); 
+    } 
+  
+    // Returns maximum path sum in tree with given root 
+    int findMaxSum(Node node) { 
+  
+        // Initialize result 
+        // int res2 = Integer.MIN_VALUE; 
+        Res res = new Res(); 
+        res.val = Integer.MIN_VALUE; 
+  
+        // Compute and return result 
+        findMaxUtil(node, res); 
+        return res.val; 
+    } 

@@ -1,0 +1,61 @@
+Coin Change
+
+//Tests
+describe('coinChange', () => {
+
+  I/O:
+  expect(coinChange([1, 2, 5], 11)).toBe(3);
+  expect(coinChange([2], 3)).toBe(-1);
+  expect(coinChange([1, 2, 5, 10, 25], 38)).toBe(4);
+  expect(coinChange([2, 5, 10, 25], 38)).toBe(4);
+
+  Edge Cases:
+  expect(coinChange([1, a, 5], 11)).toBe(-1);
+  expect(coinChange([], 11)).toBe(-1);
+  expect(coinChange([1, 2, 5])).toBe(-1);
+  expect(coinChange([1, 2, 5], a)).toBe(-1);
+
+});
+
+//Procedure
+
+  Initial Proposed Procedure: (Proposed Space/Time Complexity: O(n!)/O(n!))
+  Use Dynamic Programming to determine the number of coins to make sum.
+
+  Compare element number with least amount if successful and save the minimum.
+
+  Can we do better?
+  Yes. We can reduce the problem space by asking which combination of coins will produce a remainder that a combination exists in the array unless the remainder is 0.
+
+  Optimized Procedure: (Proposed Space/Time Complexity: )
+
+//Solution Attempt
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+var coinChange = function(coins, amount) {
+    
+};
+
+//Solution - bottom up approach
+/**
+ * @param {number[]} coins
+ * @param {number} amount
+ * @return {number}
+ */
+var coinChange = function(coins, amount) {
+  let max = amount + 1;
+  let dp = new Array(max).fill(max);
+  dp[0] = 0;
+
+  for(let i = 1; i <= amount; i++) {
+    for(let j = 0; j < coins.length; j++) {
+      if(coin[j] <= i) {
+        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+      }
+    }
+  }
+  return dp[amount] > amount ? -1 : dp[amount];  
+};
