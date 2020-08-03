@@ -1,0 +1,84 @@
+Main skills to work on: 
+ 
+    1.	Level of problem-solving ability and its consistency (Strategy) 
+    
+        a.	Ensure you understand the problem 
+        
+            i.	 Repeat the problem in your own words 
+            ii.	 Check assumptions and ask clarifying questions
+
+                 - clarify intended input
+                 - clarify intended output
+                 - clarify edge cases
+                 - performance constraints
+
+            iii. Use real examples
+            
+                 - Use real input to illustrate what the working solution would look like
+                 - Draw physical representations of problems to help explore the problem space.
+            
+            iv.	 Validate your understanding *Write informal tests which covers output validation and constraints, start with previously defined examples
+
+            *Steps ii - iv are attempts to tackle ambiquity and formally define and reduce the space the solution must exist in
+        
+        b.	Brainstorm solutions and select one *Always start with a brute force solution 
+        
+            i.	 Try to come up with at least one solution that will satisfy all pre-written test cases first, regardless of space/time complexity 
+            ii.  Transcribe this solution into written form when practical, taking into account some  implementation details and space/time complexity
+            iii. Determine the practicality of implementation, what trade-offs can be made for the problem and edit transcribed solution accordingly
+            iv.  Brainstorm optimizations of previous solutions based on space/time complexity optimization and edit transcribed solution accordingly
+            v.	 Choose a best-fit solution after previous analysis *Get interviewer approval before writing any executable code
+
+        c.  Implement solution
+
+            i.  Implement chosen solution by transcribing previous write-up into code, writing it cleanly and easy to read
+                 
+                a. Self-descriptive variables 
+                b. Self-descriptive methods 
+                c. If a code-block warrants explanation, put it in a method and properly name the method
+                d. Test the code by walking through it with pre-written test cases and make adjustments where necessary
+            
+            ii. After implementation, ask the question 'Can we do better?' and then attempt to answer that question with previous brain-storming technique.
+    
+    2.	Coding ability *a.k.a. produce a good code sample (Tactics) 
+    
+        a.	Ensure your code is readable and easy to understand 
+        
+            i.	 Self-descriptive variables 
+            ii.	 Self-descriptive methods 
+            iii. If a code-block warrants explanation, put it in a method and properly name the method 
+        
+        b.	Ensure your code is actually solving the problem presented 
+        
+            i.	Step through the code line by line and ensure it passes pre-written test cases         
+        
+        c.	Modular *Code-block can be reused through reference and is unit-testable D.R.Y (Do not repeat yourself) 
+        
+        d.	Deep understanding of programming language. *JavaScript in this case 
+        
+            i.	Use language specific methods whenever practical 
+            ii.	Understand language constraints *How the language accomplishes tasks which can cause errors 
+        
+        e.	Deep understanding of Data Structures and Algorithms implementation 
+        
+            i.	 Space/Time complexity 
+            ii.	 Use cases *Appropriate uses, inappropriate uses
+            iii. Constraints *Input and Output 
+        
+        f.	Y.A.G.N.I (You ain't gonna need it!!) Don't build something until you need it 
+    
+    3.	Communication ability *Remember the interview process is very humam, not objective!!!
+    
+        a.  Be personable and human but yourself. Don't give an interviewer a reason to dislike you as best as you can throughout the interview.
+        b.  Always communicate your intention as you’re going through the processes 
+        c.  Ensure what you communicate is understood by those who need to know *Speak clearly and concisely, ensure the interviewer at least has some idea of what you are doing 
+        d.  Collaboration *Ensure the interviewer understands what's going on, seek help when you are stuck and do so early
+        e.  Remember to accept and process feedback from the interviewer. *They're there to help you succeed so respect their feedback and give it it's day in court
+        f.  Ask what can be ignored for the sake of brevity and time *Understanding language tools really helps with this  
+
+    4. Miscelleaneous things to consider
+        
+        a.  Be able to talk about your resume for every single interview you do
+        b.  Make copies of your resume available whenever you can either physically or digitally.
+        c.  Try to put your passion for learning and technology on showcase *This can be done through the resume or even discussing your interview prep
+        d.  Be prepapred to bring your own materials to every interview *Whiteboard markers, erasers. Keep the likeliness of a delay to a minimum

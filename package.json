@@ -1,0 +1,23 @@
+{
+  "name": "my-work",
+  "version": "1.0.0",
+  "description": "This is where I keep the code that I write in preparation for Data Structure and Algorithms based technical interviews. This is meant only for practice and isn't meant to be a place for production code. Also is where I have people refer to the code I've written when I've run into a problema and need assistance.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadstewart/ds-algo-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadstewart/ds-algo-practice/issues"
+  },
+  "homepage": "https://github.com/chadstewart/ds-algo-practice#readme",
+  "dependencies": {
+    "jest": "^26.2.2"
+  }
+}
