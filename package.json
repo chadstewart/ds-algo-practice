@@ -17,7 +17,8 @@
     "url": "https://github.com/chadstewart/ds-algo-practice/issues"
   },
   "homepage": "https://github.com/chadstewart/ds-algo-practice#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "jest": "^26.2.2"
   }
 }
