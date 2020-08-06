@@ -1,4 +1,4 @@
-const { binarySearch } = require('../../utils/currently-testing');
+const { binarySearch } = require('../../utils/current-test-config');
 
 const sortedArray = [2,3,4,8,9,11,13];
 const unsortedArray = [5,4,9,2,1,18,10]
