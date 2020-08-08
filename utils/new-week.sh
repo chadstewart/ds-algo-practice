@@ -13,5 +13,8 @@ mkdir -p current-work/week-of-$1/mock-interviews/{interview-notes,question-attem
 cp misc/base-files/filler.txt current-work/week-of-$1/mock-interviews/interview-notes/filler.txt
 cp misc/base-files/filler.txt current-work/week-of-$1/mock-interviews/question-attempts/filler.txt
 
+#Make technical questions folder structure
+mkdir -p current-work/week-of-$1/technical-questions/{leetcode,codewars}
 #Copy filler file to technical-questions folder
-cp misc/base-files/filler.txt current-work/week-of-$1/technical-questions/filler.txt
+cp misc/base-files/filler.txt current-work/week-of-$1/technical-questions/leetcode/filler.txt
+cp misc/base-files/filler.txt current-work/week-of-$1/technical-questions/codewars/filler.txt

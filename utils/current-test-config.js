@@ -1,3 +1,5 @@
+let weekOf = '';
+
 module.exports = {
     binarySearchTesting: require(''),
     quickSortTesting: require('../misc/algo-samples/unit-testable/quick-sort'),
