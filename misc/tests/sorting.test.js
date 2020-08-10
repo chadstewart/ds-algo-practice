@@ -60,16 +60,44 @@ describe('Quick Sort Testing', () => {
 
     });
 
-    describe('Random Partition Function', () => {
-
-    });
-
     describe('Partition Function', () => {
 
+        describe('Whole array as partition', () => {
+            test('Given an array and two integars, should move all numbers lesser than the last element to the left and move it to it\'s sorted position', () => {
+                quickSortTesting.swap(testArray, 2, 7);
+                quickSortTesting.partition(testArray, 0, 7);
+                expect(testArray).toEqual([3,2,4,9,5,18,8,19]);
+            });
+    
+            test('Given an array and two integars, should place second index into sorted position and report it\'s location', () => {
+                quickSortTesting.swap(testArray, 2, 7);
+                expect(quickSortTesting.partition(testArray, 0, 7)).toBe(2);
+            });
+        });
+
+        describe('Segment of array as partition', () => {
+            test('Given an array and two integars, should move all numbers lesser than the last element to the left and move it to it\'s sorted position', () => {
+                quickSortTesting.swap(testArray, 2, 7);
+                quickSortTesting.partition(testArray, 0, 7);
+                quickSortTesting.swap(testArray, 6, 7);
+                quickSortTesting.partition(testArray, 3, 7);
+                expect(testArray).toEqual([3,2,4,5,8,18,19,9]);
+            });
+    
+            test('Given an array and two integars, should place second index into sorted position and report it\'s location', () => {
+                quickSortTesting.swap(testArray, 2, 7);
+                quickSortTesting.partition(testArray, 0, 7);
+                quickSortTesting.swap(testArray, 6, 7);
+                expect(quickSortTesting.partition(testArray, 0, 7)).toBe(4);
+            });
+        });
     });
 
     describe('Swap Function', () => {
-
+        test('When given an array and two indexes, it should swap two elements at the two indexes', () => {
+            quickSortTesting.swap(sortedArray, 0, 4);
+            expect(sortedArray).toEqual([5,2,3,4,1,6]);
+        });
     });
 
 });

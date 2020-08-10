@@ -1,5 +1,5 @@
 function mergeSort(array = null) {
-    if(array === null) return null;
+    if(array === null) return array;
 
     let { length } = array;
 
