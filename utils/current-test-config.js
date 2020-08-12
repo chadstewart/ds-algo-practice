@@ -1,4 +1,5 @@
-let weekOf = '';
+const folderDate = '';
+const workingFolder = `../current-work/work-of${folderDate}/`;
 
 module.exports = {
     binarySearchTesting: require('../misc/algo-samples/unit-testable/binary-search-2'),

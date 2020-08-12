@@ -1,15 +1,22 @@
-# Technical Interviews Sandbox and Journal
+# Technical Interviews Sandbox and Journal (Written in JavaScript)
 
 This is where I keep the code that I write in preparation for Data Structure and Algorithms based technical interviews. This is meant only for practice and isn't meant to be a place for production code. Also is where I have people refer to the code I've written when I've run into a problem and need assistance. 
 
+## Adding new week folder
+
+Run 'npm new-week ${Monday Date}' and a script will run to set up a new week folder structure with the date inputted.
+
 ## Running the tests
 
-*Haven't written test cases yet. In the process of writing them.
+Ensure that the exports of /utils/current-test-config.js is set to the folder you want to test.
+
+Then run 'npm test'.
 
 ## Authors
 
-* **Chad Stewart** - *Initial work* - [Chad Stewart](https://github.com/chadstewart)
+* **Chad Stewart** - *Initial work* - [GitHub Profile](https://github.com/chadstewart)
 
 ## Acknowledgments
 
-* *None as yet
+* James Carman [GitHub Profile](https://github.com/jwcarman)
+* Marie Antons [GitHub Profile](https://github.com/mrsantons)
