@@ -43,6 +43,18 @@ describe('Binary Search Testing', () => {
 
         expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(3);
     });
+    
+    test('Should find value in a sorted array in which the value is found is in the middle of an array of even number of elements', () => {
+        testArray = [2,5,6,9];
+
+        expect(binarySearchTesting.binarySearch(testArray, 6)).toBe(2);
+    });
+    
+    test('Should find value in a sorted array in which the value is found is in the middle of an array of odd number of elements', () => {
+        testArray = [2,5,8,9,13,18,27];
+
+        expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(3);
+    });
 
     test('Should find value in a sorted array containing negative numbers', () => {
         testArray = [-5,-1,0,2,3,4,8,9,11];
