@@ -4,7 +4,7 @@ This is where I keep the code that I write in preparation for Data Structure and
 
 ## Adding new week folder
 
-Run 'npm new-week ${Monday Date}' and a script will run to set up a new week folder structure with the date inputted.
+Run 'npm new-week ${current week Monday date}' and a script will run to set up a new week folder structure with the date inputted. If no value is inputted, value will default to test.
 
 ## Running the tests
 
