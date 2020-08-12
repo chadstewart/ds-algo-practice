@@ -33,6 +33,12 @@ describe('Binary Search Testing', () => {
     });
 
     test('Should find value in a sorted array containing odd number of elements', () => {
+        testArray = [3,9,15,17,20,25,26];
+
+        expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(1);
+    });
+    
+    test('Should find value in a sorted array in which the value is found when start, end and middle are the same number', () => {
         testArray = [2,5,8,9,13,18];
 
         expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(3);
