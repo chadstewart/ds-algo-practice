@@ -1,4 +1,4 @@
-function sorted(array) {
+function checkIfSorted(array) {
     for(let i = 1; i <= array.length; i++) {
         if(array[i] < array[i - 1]) return false;
     }
@@ -7,5 +7,5 @@ function sorted(array) {
 };
 
 module.exports = {
-    sorted,
+    checkIfSorted,
 }
