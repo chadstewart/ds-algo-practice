@@ -1,4 +1,6 @@
-function binarySearch(sortedArray, target) {
+function binarySearch(sortedArray = null, target = null) {
+    if(sortedArray === null || target === null) return null;
+
     let start = 0;
     let end = sortedArray.length;
 
@@ -15,4 +17,8 @@ function binarySearch(sortedArray, target) {
     }
 
     return -1;
+}
+
+module.exports = {
+    binarySearch,
 }
