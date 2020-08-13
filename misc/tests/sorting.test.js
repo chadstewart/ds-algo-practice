@@ -73,6 +73,16 @@ describe('Merge Sort Testing', () => {
             expect(checkIfSorted(isSorted)).toBeTruthy();
         });
 
+        test('If merge does not get two arrays as arguments, it should return null', () => {
+            let left = [1,3,5];
+            let right = [2,4,6];
+
+            expect(mergeSortTesting.merge(left, 0)).toBeNull();
+            expect(mergeSortTesting.merge(0, right)).toBeNull();
+            expect(mergeSortTesting.merge(0, 0)).toBeNull();
+            expect(mergeSortTesting.merge()).toBeNull();
+        });
+
     });
 
 });

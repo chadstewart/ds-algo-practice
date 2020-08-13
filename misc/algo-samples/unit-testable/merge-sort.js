@@ -13,7 +13,8 @@ function mergeSort(array = null) {
     return array;
 }
 
-function merge(left, right) {
+function merge(left = null, right = null) {
+    if(!Array.isArray(left) || !Array.isArray(right)) return null;
     let result = [];
 
     while (left.length && right.length) {

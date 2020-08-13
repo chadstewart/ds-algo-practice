@@ -56,15 +56,10 @@ describe('Binary Search Testing', () => {
         expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(3);
     });
 
-    test('Should find value in a sorted array containing negative numbers', () => {
+    test('Should find value in a sorted array containing negative numbers, including a negative target', () => {
         testArray = [-5,-1,0,2,3,4,8,9,11];
 
         expect(binarySearchTesting.binarySearch(testArray, 9)).toBe(7);
-    });
-
-    test('Should find a negative target value in a sorted array containing negative numbers', () => {
-        testArray = [-5,-1,0,2,3,4,8,9,11];
-
         expect(binarySearchTesting.binarySearch(testArray, -1)).toBe(1);
     });
 
