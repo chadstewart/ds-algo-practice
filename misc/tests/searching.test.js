@@ -2,7 +2,7 @@ const { binarySearchTesting } = require('../../utils/current-test-config');
 
 let testArray;
 
-describe('Binary Search Testing', () => {
+describe('Binary Search Algorithm Testing', () => {
 
     test('Should return null if no value is passed', () => {
         expect(binarySearchTesting.binarySearch()).toBeNull();

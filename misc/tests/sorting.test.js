@@ -61,7 +61,7 @@ function basicSortTesting(sortingFunction) {
 
 
 
-describe('Merge Sort Testing', () => {
+describe('Merge Sort Algorithm Testing', () => {
 
     basicSortTesting(mergeSortTesting.mergeSort);
 
@@ -87,7 +87,7 @@ describe('Merge Sort Testing', () => {
 
 });
 
-describe('Quick Sort Testing', () => {
+describe('Quick Sort Algorithm Testing', () => {
 
     basicSortTesting(quickSortTesting.quickSort);
 
